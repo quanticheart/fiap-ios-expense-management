@@ -1,0 +1,10 @@
+//
+//  Debug.xcconfig
+//  expense management
+//
+//  Created by Jonatas Alves santos on 18/06/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+APP_NAME=Money Debug

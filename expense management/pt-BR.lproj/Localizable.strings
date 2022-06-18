@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  expense management
+
+  Created by Jonatas Alves santos on 17/06/22.
+  
+*/
+"TAB1" = "Gastos";
+"TAB2" = "Config.";
+"TAB3" = "Resumo";
