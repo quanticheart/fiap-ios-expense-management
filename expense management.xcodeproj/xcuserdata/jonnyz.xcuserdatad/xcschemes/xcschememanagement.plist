@@ -4,10 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>expense management.xcscheme_^#shared#^_</key>
+		<key>Debug copy.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Debug.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Release.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C99143FF285D576300C59ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9F03712285C4CA90063B355</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9F03741285D0FD30063B355</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
