@@ -24,6 +24,18 @@
 		C991440B285D576300C59ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F03722285C4CB40063B355 /* Assets.xcassets */; };
 		C9914412285D96E600C59ADE /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9914411285D96E500C59ADE /* Release.xcconfig */; };
 		C9914413285D96E600C59ADE /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9914411285D96E500C59ADE /* Release.xcconfig */; };
+		C99EC1A9285FC6990071E7A4 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */; };
+		C99EC1AA285FC6990071E7A4 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */; };
+		C99EC1B0285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1AF285FD9A30071E7A4 /* ConfigurationViewController.swift */; };
+		C99EC1B1285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1AF285FD9A30071E7A4 /* ConfigurationViewController.swift */; };
+		C99EC1B6285FDB100071E7A4 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EC1B5285FDB100071E7A4 /* Configuration.storyboard */; };
+		C99EC1B7285FDB100071E7A4 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EC1B5285FDB100071E7A4 /* Configuration.storyboard */; };
+		C99EC1B9286034C90071E7A4 /* Expense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EC1B8286034C90071E7A4 /* Expense.storyboard */; };
+		C99EC1BA286034C90071E7A4 /* Expense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EC1B8286034C90071E7A4 /* Expense.storyboard */; };
+		C99EC1BC286035400071E7A4 /* Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EC1BB286035400071E7A4 /* Resume.storyboard */; };
+		C99EC1BD286035400071E7A4 /* Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EC1BB286035400071E7A4 /* Resume.storyboard */; };
+		C99EC1BF286035550071E7A4 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1BE286035550071E7A4 /* ResumeViewController.swift */; };
+		C99EC1C0286035550071E7A4 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1BE286035550071E7A4 /* ResumeViewController.swift */; };
 		C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F03716285C4CA90063B355 /* AppDelegate.swift */; };
 		C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F03718285C4CA90063B355 /* SceneDelegate.swift */; };
 		C9F0371E285C4CA90063B355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F0371C285C4CA90063B355 /* Main.storyboard */; };
@@ -42,6 +54,12 @@
 		C9914414285D96FE00C59ADE /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		C9914415285D9A1400C59ADE /* Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Release.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9914416285D9A1E00C59ADE /* Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		C99EC1AF285FD9A30071E7A4 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		C99EC1B5285FDB100071E7A4 /* Configuration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+		C99EC1B8286034C90071E7A4 /* Expense.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Expense.storyboard; sourceTree = "<group>"; };
+		C99EC1BB286035400071E7A4 /* Resume.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Resume.storyboard; sourceTree = "<group>"; };
+		C99EC1BE286035550071E7A4 /* ResumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 		C9F03716285C4CA90063B355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9F03718285C4CA90063B355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C9F0371D285C4CA90063B355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +115,33 @@
 			path = Vars;
 			sourceTree = "<group>";
 		};
+		C99EC1A3285FC0B10071E7A4 /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				C99EC1B8286034C90071E7A4 /* Expense.storyboard */,
+				C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		C99EC1A4285FC0CB0071E7A4 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				C99EC1B5285FDB100071E7A4 /* Configuration.storyboard */,
+				C99EC1AF285FD9A30071E7A4 /* ConfigurationViewController.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		C99EC1A5285FC0DC0071E7A4 /* Resume */ = {
+			isa = PBXGroup;
+			children = (
+				C99EC1BB286035400071E7A4 /* Resume.storyboard */,
+				C99EC1BE286035550071E7A4 /* ResumeViewController.swift */,
+			);
+			path = Resume;
+			sourceTree = "<group>";
+		};
 		C9F0370A285C4CA90063B355 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +178,9 @@
 		C9F0372F285C4E270063B355 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C99EC1A5285FC0DC0071E7A4 /* Resume */,
+				C99EC1A4285FC0CB0071E7A4 /* Configurations */,
+				C99EC1A3285FC0B10071E7A4 /* Expense */,
 				C9F0371C285C4CA90063B355 /* Main.storyboard */,
 				C9F03724285C4CB40063B355 /* LaunchScreen.storyboard */,
 				C99143FC285D248300C59ADE /* LaunchScreenDebug.storyboard */,
@@ -221,9 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9914407285D576300C59ADE /* LaunchScreen.storyboard in Resources */,
+				C99EC1BA286034C90071E7A4 /* Expense.storyboard in Resources */,
 				C9914408285D576300C59ADE /* Localizable.strings in Resources */,
+				C99EC1B7285FDB100071E7A4 /* Configuration.storyboard in Resources */,
 				C9914413285D96E600C59ADE /* Release.xcconfig in Resources */,
 				C94D3090285DA24A005443C8 /* LaunchScreenDebug.storyboard in Resources */,
+				C99EC1BD286035400071E7A4 /* Resume.storyboard in Resources */,
 				C991440A285D576300C59ADE /* Main.storyboard in Resources */,
 				C991440B285D576300C59ADE /* Assets.xcassets in Resources */,
 			);
@@ -234,11 +285,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F03726285C4CB40063B355 /* LaunchScreen.storyboard in Resources */,
+				C99EC1B9286034C90071E7A4 /* Expense.storyboard in Resources */,
 				C9F03732285CF3930063B355 /* Localizable.strings in Resources */,
 				C9914412285D96E600C59ADE /* Release.xcconfig in Resources */,
 				C94D308F285DA249005443C8 /* LaunchScreenDebug.storyboard in Resources */,
 				C9F0371E285C4CA90063B355 /* Main.storyboard in Resources */,
+				C99EC1BC286035400071E7A4 /* Resume.storyboard in Resources */,
 				C9F03757285D1B9F0063B355 /* Assets.xcassets in Resources */,
+				C99EC1B6285FDB100071E7A4 /* Configuration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99EC1C0286035550071E7A4 /* ResumeViewController.swift in Sources */,
+				C99EC1AA285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
+				C99EC1B1285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
 				C9914402285D576300C59ADE /* AppDelegate.swift in Sources */,
 				C9914403285D576300C59ADE /* SceneDelegate.swift in Sources */,
 				C9914404285D576300C59ADE /* expense_management.xcdatamodeld in Sources */,
@@ -262,6 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99EC1BF286035550071E7A4 /* ResumeViewController.swift in Sources */,
+				C99EC1A9285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
+				C99EC1B0285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
 				C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */,
 				C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */,
 				C9F03721285C4CA90063B355 /* expense_management.xcdatamodeld in Sources */,

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="37K-mz-ZVu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TAB 3-->
+        <scene sceneID="Vh8-m9-dQV">
+            <objects>
+                <navigationController storyboardIdentifier="Resume" id="37K-mz-ZVu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TAB 3" image="ic_tab_calc" id="wZf-hQ-CuJ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aIE-FM-OrA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Oi6-VN-PYH" kind="relationship" relationship="rootViewController" id="9Dm-P9-Yio"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXh-ut-xkL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671" y="-1005"/>
+        </scene>
+        <!--Resume View Controller-->
+        <scene sceneID="xB7-OO-adg">
+            <objects>
+                <viewController id="Oi6-VN-PYH" customClass="ResumeViewController" customModule="Debug" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H1p-tJ-Uub">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dZQ-Hg-o8F"/>
+                        <color key="backgroundColor" name="background_secondary"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RK7-fc-B2e"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tab" destination="wZf-hQ-CuJ" id="62Q-G0-gfz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcm-cx-Vas" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="-1005"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_tab_calc" width="21.5" height="21.5"/>
+        <namedColor name="background_secondary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
