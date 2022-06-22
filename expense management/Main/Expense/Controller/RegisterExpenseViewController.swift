@@ -1,19 +1,18 @@
 //
-//  ExpenseViewController.swift
+//  RegisterExpenseViewController.swift
 //  expense management
 //
-//  Created by Jonatas Alves santos on 19/06/22.
+//  Created by Jonatas Alves santos on 22/06/22.
 //
 
 import UIKit
 
-class ExpenseViewController: UITableViewController {
+class RegisterExpenseViewController: UIViewController {
 
-    @IBOutlet weak var navigation: UINavigationItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
     
 

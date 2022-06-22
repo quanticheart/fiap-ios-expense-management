@@ -114,7 +114,7 @@
         <!-- Cadastro-->
         <scene sceneID="ZE4-pW-3oQ">
             <objects>
-                <viewController id="fVc-eF-ICq" sceneMemberID="viewController">
+                <viewController id="fVc-eF-ICq" customClass="RegisterExpenseViewController" customModule="Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYP-MK-GlF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +202,7 @@
         <!--Estados-->
         <scene sceneID="q4m-G7-7lA">
             <objects>
-                <tableViewController storyboardIdentifier="Estados" id="Gf9-LZ-ENB" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Estados" id="Gf9-LZ-ENB" customClass="RegisterStatesTableViewController" customModule="Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0XC-9d-3YI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +217,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7pc-Ds-H8c">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7pc-Ds-H8c" customClass="StateTableViewCell" customModule="Debug" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="53.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7pc-Ds-H8c" id="gTx-7S-m62">
@@ -259,7 +259,7 @@
         <!--Detalhes-->
         <scene sceneID="SjK-lb-9YE">
             <objects>
-                <viewController id="OUf-bk-IUd" sceneMemberID="viewController">
+                <viewController id="OUf-bk-IUd" customClass="DetailsExpenseViewController" customModule="Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cAV-fe-1dJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,7 +343,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dai-Mv-qbb"/>
+        <segue reference="idX-m7-0Qv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ic_tab_expense" width="21.5" height="21.5"/>
