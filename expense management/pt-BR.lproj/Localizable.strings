@@ -8,3 +8,5 @@
 "TAB1" = "Gastos";
 "TAB2" = "Config.";
 "TAB3" = "Resumo";
+
+"EXPENSE_LIST_EMPTY" = "Clique em + para adicionar uma nova despesa";

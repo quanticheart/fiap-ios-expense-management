@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsExpenseViewController: UIViewController {
 
+    var expense: Expense!
     override func viewDidLoad() {
         super.viewDidLoad()
 

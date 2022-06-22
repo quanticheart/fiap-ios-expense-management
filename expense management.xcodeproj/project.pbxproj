@@ -58,6 +58,14 @@
 		C9F0F8C72863A337001C2582 /* RegisterStatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8C52863A337001C2582 /* RegisterStatesTableViewController.swift */; };
 		C9F0F8C92863A373001C2582 /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8C82863A373001C2582 /* StateTableViewCell.swift */; };
 		C9F0F8CA2863A373001C2582 /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8C82863A373001C2582 /* StateTableViewCell.swift */; };
+		C9F0F8CE2863B6C4001C2582 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8CD2863B6C4001C2582 /* CoreDataExt.swift */; };
+		C9F0F8CF2863B6C4001C2582 /* CoreDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8CD2863B6C4001C2582 /* CoreDataExt.swift */; };
+		C9F0F8D12863B6DF001C2582 /* SegueExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D02863B6DF001C2582 /* SegueExt.swift */; };
+		C9F0F8D22863B6DF001C2582 /* SegueExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D02863B6DF001C2582 /* SegueExt.swift */; };
+		C9F0F8D42863BF29001C2582 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D32863BF29001C2582 /* UIViewControllerExt.swift */; };
+		C9F0F8D52863BF29001C2582 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D32863BF29001C2582 /* UIViewControllerExt.swift */; };
+		C9F0F8D82863CCFD001C2582 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D72863CCFD001C2582 /* TableViewExt.swift */; };
+		C9F0F8D92863CCFD001C2582 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D72863CCFD001C2582 /* TableViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +101,10 @@
 		C9F0F8C22863A2F0001C2582 /* DetailsExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsExpenseViewController.swift; sourceTree = "<group>"; };
 		C9F0F8C52863A337001C2582 /* RegisterStatesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStatesTableViewController.swift; sourceTree = "<group>"; };
 		C9F0F8C82863A373001C2582 /* StateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewCell.swift; sourceTree = "<group>"; };
+		C9F0F8CD2863B6C4001C2582 /* CoreDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExt.swift; sourceTree = "<group>"; };
+		C9F0F8D02863B6DF001C2582 /* SegueExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueExt.swift; sourceTree = "<group>"; };
+		C9F0F8D32863BF29001C2582 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		C9F0F8D72863CCFD001C2582 /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,8 @@
 		C94D3098285E5176005443C8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				C9F0F8D62863BF37001C2582 /* Constrollers */,
+				C9F0F8CC2863B6AC001C2582 /* System */,
 				C94D309D285E51AC005443C8 /* Vars */,
 				C94D309C285E51A4005443C8 /* View */,
 			);
@@ -127,6 +141,7 @@
 			children = (
 				C94D3099285E519A005443C8 /* TabBarExt.swift */,
 				C91B6F8028614D0D009D3C7B /* ImageExt.swift */,
+				C9F0F8D72863CCFD001C2582 /* TableViewExt.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +224,7 @@
 		C9F03715285C4CA90063B355 /* expense management */ = {
 			isa = PBXGroup;
 			children = (
+				C9F0F8CB2863B487001C2582 /* Repository */,
 				C9F0372F285C4E270063B355 /* Main */,
 				C9F0372E285C4DEB0063B355 /* Core */,
 				C9F03722285C4CB40063B355 /* Assets.xcassets */,
@@ -252,6 +268,30 @@
 				C9F0F8C82863A373001C2582 /* StateTableViewCell.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		C9F0F8CB2863B487001C2582 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C9F0F8CC2863B6AC001C2582 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0F8CD2863B6C4001C2582 /* CoreDataExt.swift */,
+				C9F0F8D02863B6DF001C2582 /* SegueExt.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		C9F0F8D62863BF37001C2582 /* Constrollers */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0F8D32863BF29001C2582 /* UIViewControllerExt.swift */,
+			);
+			path = Constrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,8 +411,11 @@
 				C9F0F8C42863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
 				C99EC1AA285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C99EC1B1285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
+				C9F0F8CF2863B6C4001C2582 /* CoreDataExt.swift in Sources */,
 				C9914402285D576300C59ADE /* AppDelegate.swift in Sources */,
+				C9F0F8D22863B6DF001C2582 /* SegueExt.swift in Sources */,
 				C9914403285D576300C59ADE /* SceneDelegate.swift in Sources */,
+				C9F0F8D52863BF29001C2582 /* UIViewControllerExt.swift in Sources */,
 				C9F0F8CA2863A373001C2582 /* StateTableViewCell.swift in Sources */,
 				C9F0F8C72863A337001C2582 /* RegisterStatesTableViewController.swift in Sources */,
 				C9914404285D576300C59ADE /* expense_management.xcdatamodeld in Sources */,
@@ -380,6 +423,7 @@
 				C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */,
 				C9F0F8C12863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
 				C94D30A0285E51CA005443C8 /* StringExt.swift in Sources */,
+				C9F0F8D92863CCFD001C2582 /* TableViewExt.swift in Sources */,
 				C91B6F8728622A4C009D3C7B /* DoubleExt.swift in Sources */,
 				C94D309B285E519A005443C8 /* TabBarExt.swift in Sources */,
 			);
@@ -389,17 +433,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F0F8D12863B6DF001C2582 /* SegueExt.swift in Sources */,
 				C9F0F8C92863A373001C2582 /* StateTableViewCell.swift in Sources */,
 				C99EC1C828613C7C0071E7A4 /* ExpenseTableViewCell.swift in Sources */,
 				C99EC1BF286035550071E7A4 /* ResumeViewController.swift in Sources */,
 				C9F0F8C62863A337001C2582 /* RegisterStatesTableViewController.swift in Sources */,
+				C9F0F8CE2863B6C4001C2582 /* CoreDataExt.swift in Sources */,
 				C9F0F8C02863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
 				C99EC1A9285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C91B6F862861898D009D3C7B /* AnyExt.swift in Sources */,
 				C99EC1B0285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
 				C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */,
+				C9F0F8D42863BF29001C2582 /* UIViewControllerExt.swift in Sources */,
 				C9F0F8C32863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
 				C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */,
+				C9F0F8D82863CCFD001C2582 /* TableViewExt.swift in Sources */,
 				C9F03721285C4CA90063B355 /* expense_management.xcdatamodeld in Sources */,
 				C94D3096285E4E4D005443C8 /* MainViewController.swift in Sources */,
 				C91B6F8128614D0D009D3C7B /* ImageExt.swift in Sources */,

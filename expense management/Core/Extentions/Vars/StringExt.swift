@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func localize() -> String {
         return NSLocalizedString(self, comment: "")
+    }
+    
+    func getColor() -> UIColor? {
+        return UIColor(named: self)
     }
 }

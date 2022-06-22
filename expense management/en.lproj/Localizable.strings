@@ -9,3 +9,5 @@
 "TAB1" = "Expanse";
 "TAB2" = "Config";
 "TAB3" = "Resume";
+
+"EXPENSE_LIST_EMPTY" = "Click in + to add new expense";
