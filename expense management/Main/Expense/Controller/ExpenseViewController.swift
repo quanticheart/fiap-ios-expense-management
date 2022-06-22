@@ -7,12 +7,16 @@
 
 import UIKit
 
-class ExpenseViewController: UIViewController {
+class ExpenseViewController: UITableViewController {
 
+    @IBOutlet weak var navigation: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigation.title = "TAB1".localize()
+        navigation.titleView?.tintColor
 
-        // Do any additional setup after loading the view.
+
     }
     
 

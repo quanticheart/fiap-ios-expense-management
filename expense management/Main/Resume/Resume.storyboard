@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="37K-mz-ZVu">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,9 +14,18 @@
                 <navigationController storyboardIdentifier="Resume" id="37K-mz-ZVu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="TAB 3" image="ic_tab_calc" id="wZf-hQ-CuJ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aIE-FM-OrA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aIE-FM-OrA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="app_primary"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="app_primary"/>
+                            <color key="textShadowColor" name="app_secondary"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="app_primary"/>
+                            <color key="textShadowColor" name="app_secondary"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Oi6-VN-PYH" kind="relationship" relationship="rootViewController" id="9Dm-P9-Yio"/>
@@ -33,8 +42,21 @@
                     <view key="view" contentMode="scaleToFill" id="H1p-tJ-Uub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-cx-YOu">
+                                <rect key="frame" x="16" y="198" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" name="text_color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dZQ-Hg-o8F"/>
                         <color key="backgroundColor" name="background_secondary"/>
+                        <constraints>
+                            <constraint firstItem="Nqh-cx-YOu" firstAttribute="leading" secondItem="dZQ-Hg-o8F" secondAttribute="leading" constant="16" id="CEa-F4-k5e"/>
+                            <constraint firstItem="Nqh-cx-YOu" firstAttribute="top" secondItem="dZQ-Hg-o8F" secondAttribute="top" constant="50" id="nHC-do-1IK"/>
+                            <constraint firstItem="dZQ-Hg-o8F" firstAttribute="trailing" secondItem="Nqh-cx-YOu" secondAttribute="trailing" constant="16" id="tcn-Sr-JUD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RK7-fc-B2e"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -44,13 +66,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rcm-cx-Vas" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217" y="-1005"/>
+            <point key="canvasLocation" x="215.94202898550725" y="-1005.1339285714286"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_tab_calc" width="21.5" height="21.5"/>
+        <namedColor name="app_primary">
+            <color red="0.0" green="0.6589999794960022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_secondary">
+            <color red="0.0" green="0.59200000762939453" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="background_secondary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_color">
+            <color red="0.17299999296665192" green="0.24300000071525574" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
