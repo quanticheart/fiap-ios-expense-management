@@ -19,12 +19,12 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     @IBOutlet weak var image: UIImageView!
     
     var expense: Expense!
-    var selectedCategories: State? = nil {
+    var selectedState: State? = nil {
         didSet {
-            if selectedCategories == nil {
+            if selectedState == nil {
                 labelSelectState.text = "HINT_SELECT_STATE".localize()
             } else {
-                labelSelectState.text = selectedCategories?.name
+                labelSelectState.text = selectedState?.name
             }
         }
     }
@@ -58,6 +58,20 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     }
     
     @IBAction func insertItem(_ sender: Any) {
+        if expense == nil {
+            expense = Expense(context: context)
+        }
+        expense?.name = textFieldName.text
+        expense?.price = textFieldPrice.text!.toDouble()
+        expense?.states = selectedState
+        expense?.image = self.image.image?.jpegData(compressionQuality: 0.8)
+        
+        do {
+            try context.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print(error)
+        }
     }
     
     @IBAction func selectImage(_ sender: Any) {

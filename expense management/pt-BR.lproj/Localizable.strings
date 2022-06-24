@@ -15,7 +15,7 @@
 "HINT_NAME_EXPENSE" = "Dígite o nome do item";
 "HINT_PRICE_EXPENSE" = "Dígite o valor gasto";
 "HINT_SELECT_STATE" = "Selecione o estado de compra";
-"HINT_SELECT_IMAGE" = "Selecione a imagem do item clicando abaixo";
+"HINT_SELECT_IMAGE" = "Selecione a imagem do item";
 
 "BTN_LABEL_INSERT" = "Inserir item";
 "BTN_LABEL_UPDATE" = "Atualizar item";

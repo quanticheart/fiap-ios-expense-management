@@ -14,3 +14,14 @@ extension Double {
     }
     
 }
+
+extension String {
+    func toDouble() -> Double {
+        do{
+            return try Double(self) ?? 0.0
+        } catch {
+            return 0.0
+        }
+    }
+    
+}
