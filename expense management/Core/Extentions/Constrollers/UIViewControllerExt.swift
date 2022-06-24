@@ -13,5 +13,9 @@ extension UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
+    
+    func hideKeyboard(){
+        view.endEditing(true)
+    }
 }
 

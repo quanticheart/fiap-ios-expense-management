@@ -10,3 +10,20 @@
 "TAB3" = "Resumo";
 
 "EXPENSE_LIST_EMPTY" = "Clique em + para adicionar uma nova despesa";
+
+"NAVIGATION_INSERT" = "Cadastrar";
+"HINT_NAME_EXPENSE" = "Dígite o nome do item";
+"HINT_PRICE_EXPENSE" = "Dígite o valor gasto";
+"HINT_SELECT_STATE" = "Selecione o estado de compra";
+"HINT_SELECT_IMAGE" = "Selecione a imagem do item clicando abaixo";
+
+"BTN_LABEL_INSERT" = "Inserir item";
+"BTN_LABEL_UPDATE" = "Atualizar item";
+"BTN_LABEL_CANCEL" = "Cancelar";
+
+"DIALOG_IMG_MSG_TITLE" = "Selecionar pôster";
+"DIALOG_IMG_MSG_SUBTITLE" = "De onde você deseja escolher o pôster?";
+"DIALOG_IMG_OPTION_CAMERA" = "Câmera";
+"DIALOG_IMG_OPTION_LIBRARY" = "Biblioteca de Fotos";
+"DIALOG_IMG_OPTION_ALBUM" = "Álbum de Fotos";
+
