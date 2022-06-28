@@ -11,12 +11,11 @@
         <scene sceneID="qYi-r1-kJF">
             <objects>
                 <tabBarController id="YaR-NP-vhi" customClass="MainViewController" customModule="Debug" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="M3N-5y-89J">
+                    <tabBar key="tabBar" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="M3N-5y-89J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="background"/>
                         <color key="tintColor" name="app_primary"/>
-                        <color key="selectedImageTintColor" name="app_secondary"/>
                     </tabBar>
                     <connections>
                         <outlet property="mainTabBar" destination="M3N-5y-89J" id="68v-Ye-JKz"/>
@@ -67,9 +66,6 @@
         <image name="ic_tab_expense" width="21.5" height="21.5"/>
         <namedColor name="app_primary">
             <color red="0.0" green="0.6589999794960022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="app_secondary">
-            <color red="0.0" green="0.59200000762939453" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="background">
             <color red="0.95300000905990601" green="0.95300000905990601" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

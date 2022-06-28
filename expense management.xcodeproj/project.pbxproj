@@ -68,6 +68,8 @@
 		C9F0F8D92863CCFD001C2582 /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8D72863CCFD001C2582 /* TableViewExt.swift */; };
 		C9F0F8DF28653625001C2582 /* DialogImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8DE28653625001C2582 /* DialogImageSelector.swift */; };
 		C9F0F8E028653625001C2582 /* DialogImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8DE28653625001C2582 /* DialogImageSelector.swift */; };
+		C9F0F8E228665F0F001C2582 /* DialogExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8E128665F0F001C2582 /* DialogExt.swift */; };
+		C9F0F8E328665F0F001C2582 /* DialogExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0F8E128665F0F001C2582 /* DialogExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,7 @@
 		C9F0F8D32863BF29001C2582 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C9F0F8D72863CCFD001C2582 /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 		C9F0F8DE28653625001C2582 /* DialogImageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogImageSelector.swift; sourceTree = "<group>"; };
+		C9F0F8E128665F0F001C2582 /* DialogExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +289,7 @@
 			children = (
 				C9F0F8CD2863B6C4001C2582 /* CoreDataExt.swift */,
 				C9F0F8D02863B6DF001C2582 /* SegueExt.swift */,
+				C9F0F8E128665F0F001C2582 /* DialogExt.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -419,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F0F8E028653625001C2582 /* DialogImageSelector.swift in Sources */,
+				C9F0F8E328665F0F001C2582 /* DialogExt.swift in Sources */,
 				C99EC1C928613C7C0071E7A4 /* ExpenseTableViewCell.swift in Sources */,
 				C99EC1C0286035550071E7A4 /* ResumeViewController.swift in Sources */,
 				C9F0F8C42863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
@@ -454,6 +459,7 @@
 				C9F0F8C62863A337001C2582 /* RegisterStatesTableViewController.swift in Sources */,
 				C9F0F8CE2863B6C4001C2582 /* CoreDataExt.swift in Sources */,
 				C9F0F8C02863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
+				C9F0F8E228665F0F001C2582 /* DialogExt.swift in Sources */,
 				C99EC1A9285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C91B6F862861898D009D3C7B /* AnyExt.swift in Sources */,
 				C99EC1B0285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,

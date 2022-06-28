@@ -14,6 +14,8 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     @IBOutlet weak var textFieldPrice: UITextField!
     @IBOutlet weak var labelSelectState: UILabel!
     @IBOutlet weak var btnSelectImage: UIButton!
+    @IBOutlet weak var labelInsertDescription: UILabel!
+    @IBOutlet weak var textDescription: UITextView!
     @IBOutlet weak var btnInsert: UIButton!
     
     @IBOutlet weak var image: UIImageView!
@@ -40,13 +42,16 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
         textFieldPrice.placeholder = "HINT_PRICE_EXPENSE".localize()
         labelSelectState.text = "HINT_SELECT_STATE".localize()
         btnSelectImage.titleLabel?.text = "HINT_SELECT_IMAGE".localize()
+        labelInsertDescription?.text = "HINT_LABEL_DESCRIPTION".localize()
         btnInsert.titleLabel?.text = "BTN_LABEL_INSERT".localize()
         
         if let expense = expense {
             textFieldName.text = expense.name
-            textFieldName.text = "\(expense.price)"
-            labelSelectState.text = expense.states?.name
+            textFieldPrice.text = "\(expense.price)"
+            labelSelectState.text = expense.state?.name
+            textDescription.text = expense.desc
             image.image = expense.image?.toUIImage()
+            navigation.title = "NAVIGATION_UPDATE".localize()
             btnInsert.setTitle("BTN_LABEL_UPDATE".localize(), for: .normal)
         }
         // Do any additional setup after loading the view.
@@ -63,9 +68,9 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
         }
         expense?.name = textFieldName.text
         expense?.price = textFieldPrice.text!.toDouble()
-        expense?.states = selectedState
+        expense?.state = selectedState
         expense?.image = self.image.image?.jpegData(compressionQuality: 0.8)
-        
+        expense?.desc = textDescription.text
         do {
             try context.save()
             navigationController?.popViewController(animated: true)
@@ -83,14 +88,17 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
             self.image.image = img
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let stateVC = segue.destination as? RegisterStatesTableViewController
+        stateVC?.delegate = self
+        stateVC?.finishBeforeSelect = true
+        stateVC?.selectedState = selectedState
+    }
+}
+
+extension RegisterExpenseViewController: StateDelegate {
+    func setSelected(_ state: State) {
+        selectedState = state
+    }
 }

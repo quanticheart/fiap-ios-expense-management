@@ -9,22 +9,33 @@ import UIKit
 
 class DetailsExpenseViewController: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var labelNmae: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var labelState: UILabel!
+    @IBOutlet weak var labelDescription: UITextView!
+    
     var expense: Expense!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if expense != nil {
+            labelNmae.text = expense.name
+            labelPrice.text = expense.price.toPriceLabel()
+            labelState.text = expense.state?.name
+            labelDescription.text = expense.desc
+            image.image = expense.image?.toUIImage()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let vc = segue.destination as? RegisterExpenseViewController
+        vc?.expense = expense
     }
-    */
-
 }

@@ -18,6 +18,7 @@ extension UITableView {
         messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
         messageLabel.sizeToFit()
         messageLabel.setMargins(margin: 16)
+        messageLabel.layer.zPosition = 50
         
         self.backgroundView = messageLabel
         self.separatorStyle = .none

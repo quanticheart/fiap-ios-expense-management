@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIViewController {
+    func back(){
+        navigationController?.popViewController(animated: true)
+    }
+}
