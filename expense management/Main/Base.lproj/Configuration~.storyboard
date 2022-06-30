@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YaR-NP-vhi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="qYi-r1-kJF">
+            <objects>
+                <tabBarController id="YaR-NP-vhi" customClass="MainViewController" customModule="Debug" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M3N-5y-89J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="background_secondary"/>
+                        <color key="barTintColor" name="background"/>
+                        <color key="selectedImageTintColor" name="app_primary"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="mainTabBar" destination="M3N-5y-89J" id="68v-Ye-JKz"/>
+                        <outlet property="tabBar" destination="M3N-5y-89J" id="2y9-2w-TQI"/>
+                        <segue destination="NMJ-O9-FqG" kind="relationship" relationship="viewControllers" id="pMM-nO-yjg"/>
+                        <segue destination="eOA-hQ-I5b" kind="relationship" relationship="viewControllers" id="C2B-dM-VQt"/>
+                        <segue destination="aJS-aH-Bdu" kind="relationship" relationship="viewControllers" id="rjb-xr-OTf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEg-V0-TQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1538" y="-1013"/>
+        </scene>
+        <!--Tab 1-->
+        <scene sceneID="xnH-Qu-1Bl">
+            <objects>
+                <navigationController id="qcs-6g-Weg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tab 1" image="ic_tab_expense" id="7hj-Kb-b6E"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="VrN-lD-HIp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                            <color key="textColor" name="text_color"/>
+                        </textAttributes>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsc-ch-Rv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="-1720"/>
+        </scene>
+        <!--ExpenseViewController-->
+        <scene sceneID="mha-dj-ALm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Expense" referencedIdentifier="ExpenseViewController" id="aJS-aH-Bdu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sug-AC-Q2d"/>
+                    <navigationItem key="navigationItem" id="yRy-MM-hG5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0t-rs-Jv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1083" y="-1471"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="0BD-bi-dkp">
+            <objects>
+                <navigationController id="NMJ-O9-FqG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" image="ic_tab_edit" id="JBJ-x9-tK3"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9hC-hP-hjN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYk-cS-56w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="-1013"/>
+        </scene>
+        <!--Item 3-->
+        <scene sceneID="Dxo-ll-h6Y">
+            <objects>
+                <navigationController id="eOA-hQ-I5b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 3" image="ic_tab_calc" id="eEq-7I-FT7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Slh-dV-k6e">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rA8-d6-b2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="-269"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_tab_calc" width="21.5" height="21.5"/>
+        <image name="ic_tab_edit" width="21.5" height="21.5"/>
+        <image name="ic_tab_expense" width="21.5" height="21.5"/>
+        <namedColor name="app_primary">
+            <color red="0.0" green="0.6589999794960022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background">
+            <color red="0.95300000905990601" green="0.95300000905990601" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background_secondary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_color">
+            <color red="0.17299999296665192" green="0.24300000071525574" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
