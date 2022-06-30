@@ -42,6 +42,7 @@ class RegisterStatesTableViewController: UITableViewController {
         loadStates()
     }
     
+    
     private func loadStates() {
         states = loadDatabase(with: State.self, sortBy: "name")
         statesFiltered = states
