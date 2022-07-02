@@ -10,7 +10,7 @@
 "TAB3" = "Resumo";
 
 "MSG_EXPENSE_LIST_EMPTY" = "Clique em + para adicionar uma nova despesa";
-"MSG_STATES_LIST_EMPTY" = "Clique em + para adicionar um novo Estado";
+"MSG_STATES_LIST_EMPTY" = "Clique em + para adicionar um novo estado";
 "MSG_STATES_SEARCH_EMPTY" = "Nada foi encontrado";
 
 "NAVIGATION_INSERT" = "Cadastrar";

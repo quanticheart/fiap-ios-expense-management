@@ -18,8 +18,6 @@ class ExpenseViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = UITableView.automaticDimension
         navigation.title = "TAB1".localize()
         loadMovies()
     }

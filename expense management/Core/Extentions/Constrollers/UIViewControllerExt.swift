@@ -17,5 +17,9 @@ extension UIViewController {
     func hideKeyboard(){
         view.endEditing(true)
     }
+    
+    func removeNotificationObserver(){
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 

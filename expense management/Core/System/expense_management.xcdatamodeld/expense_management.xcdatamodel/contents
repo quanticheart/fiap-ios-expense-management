@@ -12,7 +12,7 @@
         <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="state" inverseEntity="Expense"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Expense" positionX="-264.7957153320312" positionY="-28.3568115234375" width="128" height="118"/>
         <element name="State" positionX="-54" positionY="18" width="128" height="59"/>
     </elements>
 </model>

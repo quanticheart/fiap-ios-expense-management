@@ -43,6 +43,12 @@
 		C99EC1C0286035550071E7A4 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1BE286035550071E7A4 /* ResumeViewController.swift */; };
 		C99EC1C828613C7C0071E7A4 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1C728613C7C0071E7A4 /* ExpenseTableViewCell.swift */; };
 		C99EC1C928613C7C0071E7A4 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EC1C728613C7C0071E7A4 /* ExpenseTableViewCell.swift */; };
+		C9A7C813286EB4230022B06B /* PriceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C812286EB4230022B06B /* PriceTextField.swift */; };
+		C9A7C814286EB4230022B06B /* PriceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C812286EB4230022B06B /* PriceTextField.swift */; };
+		C9A7C8162870B2010022B06B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9A7C8152870B2000022B06B /* Settings.bundle */; };
+		C9A7C8172870B2010022B06B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9A7C8152870B2000022B06B /* Settings.bundle */; };
+		C9A7C81A2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */; };
+		C9A7C81B2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */; };
 		C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F03716285C4CA90063B355 /* AppDelegate.swift */; };
 		C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F03718285C4CA90063B355 /* SceneDelegate.swift */; };
 		C9F0371E285C4CA90063B355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F0371C285C4CA90063B355 /* Main.storyboard */; };
@@ -91,6 +97,9 @@
 		C99EC1BB286035400071E7A4 /* Resume.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Resume.storyboard; sourceTree = "<group>"; };
 		C99EC1BE286035550071E7A4 /* ResumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 		C99EC1C728613C7C0071E7A4 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		C9A7C812286EB4230022B06B /* PriceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextField.swift; sourceTree = "<group>"; };
+		C9A7C8152870B2000022B06B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		C9F03716285C4CA90063B355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9F03718285C4CA90063B355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C9F0371D285C4CA90063B355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +226,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		C9A7C8182870B9910022B06B /* System */ = {
+			isa = PBXGroup;
+			children = (
+				C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */,
+				C9F03722285C4CB40063B355 /* Assets.xcassets */,
+				C9F0371F285C4CA90063B355 /* expense_management.xcdatamodeld */,
+				C9A7C8152870B2000022B06B /* Settings.bundle */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		C9F0370A285C4CA90063B355 = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +253,6 @@
 				C9F0F8CB2863B487001C2582 /* Repository */,
 				C9F0372F285C4E270063B355 /* Main */,
 				C9F0372E285C4DEB0063B355 /* Core */,
-				C9F03722285C4CB40063B355 /* Assets.xcassets */,
 				C9F03734285CF3930063B355 /* Localizable.strings */,
 				C9F0373F285D004C0063B355 /* Info.plist */,
 			);
@@ -243,9 +262,9 @@
 		C9F0372E285C4DEB0063B355 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C9A7C8182870B9910022B06B /* System */,
 				C9F0F8DD286535FF001C2582 /* CustonView */,
 				C94D3098285E5176005443C8 /* Extentions */,
-				C9F0371F285C4CA90063B355 /* expense_management.xcdatamodeld */,
 				C9914411285D96E500C59ADE /* Release.xcconfig */,
 				C9914414285D96FE00C59ADE /* Debug.xcconfig */,
 			);
@@ -306,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F0F8DE28653625001C2582 /* DialogImageSelector.swift */,
+				C9A7C812286EB4230022B06B /* PriceTextField.swift */,
 			);
 			path = CustonView;
 			sourceTree = "<group>";
@@ -389,6 +409,7 @@
 			files = (
 				C9914407285D576300C59ADE /* LaunchScreen.storyboard in Resources */,
 				C99EC1BA286034C90071E7A4 /* Expense.storyboard in Resources */,
+				C9A7C8172870B2010022B06B /* Settings.bundle in Resources */,
 				C9914408285D576300C59ADE /* Localizable.strings in Resources */,
 				C99EC1B7285FDB100071E7A4 /* Configuration.storyboard in Resources */,
 				C9914413285D96E600C59ADE /* Release.xcconfig in Resources */,
@@ -405,6 +426,7 @@
 			files = (
 				C9F03726285C4CB40063B355 /* LaunchScreen.storyboard in Resources */,
 				C99EC1B9286034C90071E7A4 /* Expense.storyboard in Resources */,
+				C9A7C8162870B2010022B06B /* Settings.bundle in Resources */,
 				C9F03732285CF3930063B355 /* Localizable.strings in Resources */,
 				C9914412285D96E600C59ADE /* Release.xcconfig in Resources */,
 				C94D308F285DA249005443C8 /* LaunchScreenDebug.storyboard in Resources */,
@@ -429,6 +451,7 @@
 				C9F0F8C42863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
 				C99EC1AA285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C99EC1B1285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
+				C9A7C814286EB4230022B06B /* PriceTextField.swift in Sources */,
 				C9F0F8CF2863B6C4001C2582 /* CoreDataExt.swift in Sources */,
 				C9914402285D576300C59ADE /* AppDelegate.swift in Sources */,
 				C9F0F8D22863B6DF001C2582 /* SegueExt.swift in Sources */,
@@ -437,6 +460,7 @@
 				C9F0F8CA2863A373001C2582 /* StateTableViewCell.swift in Sources */,
 				C9F0F8C72863A337001C2582 /* RegisterStatesTableViewController.swift in Sources */,
 				C9914404285D576300C59ADE /* expense_management.xcdatamodeld in Sources */,
+				C9A7C81B2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */,
 				C94D3097285E4E4D005443C8 /* MainViewController.swift in Sources */,
 				C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */,
 				C9F0F8C12863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
@@ -462,7 +486,9 @@
 				C9F0F8E228665F0F001C2582 /* DialogExt.swift in Sources */,
 				C99EC1A9285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C91B6F862861898D009D3C7B /* AnyExt.swift in Sources */,
+				C9A7C813286EB4230022B06B /* PriceTextField.swift in Sources */,
 				C99EC1B0285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
+				C9A7C81A2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */,
 				C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */,
 				C9F0F8D42863BF29001C2582 /* UIViewControllerExt.swift in Sources */,
 				C9F0F8C32863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,

@@ -11,7 +11,7 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
  
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var textFieldName: UITextField!
-    @IBOutlet weak var textFieldPrice: UITextField!
+    @IBOutlet weak var textFieldPrice: UIPriceTextField!
     @IBOutlet weak var labelSelectState: UILabel!
     @IBOutlet weak var btnSelectImage: UIButton!
     @IBOutlet weak var labelInsertDescription: UILabel!
@@ -41,13 +41,13 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
         textFieldName.placeholder = "HINT_NAME_EXPENSE".localize()
         textFieldPrice.placeholder = "HINT_PRICE_EXPENSE".localize()
         labelSelectState.text = "HINT_SELECT_STATE".localize()
-        btnSelectImage.titleLabel?.text = "HINT_SELECT_IMAGE".localize()
+        btnSelectImage.setTitle("HINT_SELECT_IMAGE".localize(),for: .normal)
         labelInsertDescription?.text = "HINT_LABEL_DESCRIPTION".localize()
-        btnInsert.titleLabel?.text = "BTN_LABEL_INSERT".localize()
+        btnInsert.setTitle("BTN_LABEL_INSERT".localize(),for: .normal)
         
         if let expense = expense {
             textFieldName.text = expense.name
-            textFieldPrice.text = "\(expense.price)"
+            textFieldPrice.text = expense.price.toPriceLabel()
             labelSelectState.text = expense.state?.name
             textDescription.text = expense.desc
             image.image = expense.image?.toUIImage()
@@ -67,7 +67,7 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
             expense = Expense(context: context)
         }
         expense?.name = textFieldName.text
-        expense?.price = textFieldPrice.text!.toDouble()
+        expense?.price = textFieldPrice.price()
         expense?.state = selectedState
         expense?.image = self.image.image?.jpegData(compressionQuality: 0.8)
         expense?.desc = textDescription.text

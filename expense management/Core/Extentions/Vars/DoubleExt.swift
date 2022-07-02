@@ -10,7 +10,13 @@ import Foundation
 extension Double {
     
     func toPriceLabel() -> String? {
-        return String(format: "%.1f",self)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currencyAccounting
+        formatter.currencySymbol = "R$"
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        
+        return formatter.string(from: self as NSNumber)!
     }
     
 }

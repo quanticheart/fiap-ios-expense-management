@@ -16,4 +16,8 @@ extension String {
     func getColor() -> UIColor? {
         return UIColor(named: self)
     }
+    
+    func trim() -> String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
