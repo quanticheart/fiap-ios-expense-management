@@ -9,7 +9,7 @@
     </entity>
     <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="state" inverseEntity="Expense"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" inverseName="state" inverseEntity="Expense"/>
     </entity>
     <elements>
         <element name="Expense" positionX="-264.7957153320312" positionY="-28.3568115234375" width="128" height="118"/>

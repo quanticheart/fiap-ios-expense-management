@@ -86,6 +86,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="label" destination="ala-eY-kks" id="5Zk-1g-Rfy"/>
                         <outlet property="msg" destination="9Ds-dK-4Zg" id="nkd-kq-tl8"/>
                         <outlet property="navigation" destination="yOb-6e-Cdv" id="ZQs-aI-8af"/>
                     </connections>

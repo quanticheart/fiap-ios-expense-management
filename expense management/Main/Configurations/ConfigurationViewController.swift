@@ -11,6 +11,7 @@ class ConfigurationViewController: UIViewController {
 
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var msg: UILabel!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
