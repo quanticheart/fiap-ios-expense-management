@@ -32,17 +32,18 @@ class SettingsBundleHelper {
     
     class func setVersionAndBuildNumber() {
         let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        UserDefaults.standard.set(version, forKey: SettingsBundleKeys.AppVersionKey)
+        setUserString(forKey: SettingsBundleKeys.AppVersionKey, value: version)
         
         let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-        UserDefaults.standard.set(build, forKey: SettingsBundleKeys.BuildVersionKey)
+        setUserString(forKey: SettingsBundleKeys.BuildVersionKey, value: build)
     }
     
     class func setVlues() {
-        let dolar = UserDefaults.standard.string(forKey: SettingsBundleKeys.Dolar)
-        UserDefaults.standard.set("5.00", forKey: SettingsBundleKeys.Dolar)
-        
-        UserDefaults.standard.set("6", forKey: SettingsBundleKeys.Ir)
+        let dolar = getUserString(forKey: SettingsBundleKeys.Dolar) ?? "5.00"
+        setUserString(forKey: SettingsBundleKeys.Dolar, value: dolar)
+
+        let ir = getUserString(forKey: SettingsBundleKeys.Dolar) ?? "6"
+        setUserString(forKey: SettingsBundleKeys.Ir, value: ir)
     }
 }
 
@@ -51,19 +52,19 @@ extension UIViewController {
         let appDefaults = [String:AnyObject]()
         UserDefaults.standard.register(defaults: appDefaults)
         notificationObserver()
-        defaultsChanged()
+        changeTheme()
     }
     
-    @objc func defaultsChanged() {
-        if UserDefaults.standard.bool(forKey: "RedThemeKey") {
-            self.view.backgroundColor = UIColor.red
+    @objc func changeTheme() {
+        if getUserBoolean(forKey: SettingsBundleHelper.SettingsBundleKeys.darkModeKey) {
+            self.overrideUserInterfaceStyle = .dark
         } else {
-            self.view.backgroundColor = UIColor.green
+            self.overrideUserInterfaceStyle = .light
         }
     }
     
     func notificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeTheme), name: UserDefaults.didChangeNotification, object: nil)
     }
     
 }

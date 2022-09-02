@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         SettingsBundleHelper.checkAndExecuteSettings()
         SettingsBundleHelper.setVersionAndBuildNumber()
+        SettingsBundleHelper.setVlues()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

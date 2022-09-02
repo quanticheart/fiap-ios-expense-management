@@ -49,6 +49,8 @@
 		C9A7C8172870B2010022B06B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C9A7C8152870B2000022B06B /* Settings.bundle */; };
 		C9A7C81A2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */; };
 		C9A7C81B2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */; };
+		C9A8B1EC28C186630066EE09 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B1EB28C186630066EE09 /* UserDefaultsExt.swift */; };
+		C9A8B1ED28C186630066EE09 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8B1EB28C186630066EE09 /* UserDefaultsExt.swift */; };
 		C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F03716285C4CA90063B355 /* AppDelegate.swift */; };
 		C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F03718285C4CA90063B355 /* SceneDelegate.swift */; };
 		C9F0371E285C4CA90063B355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F0371C285C4CA90063B355 /* Main.storyboard */; };
@@ -100,6 +102,7 @@
 		C9A7C812286EB4230022B06B /* PriceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextField.swift; sourceTree = "<group>"; };
 		C9A7C8152870B2000022B06B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C9A7C8192870B9A50022B06B /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
+		C9A8B1EB28C186630066EE09 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 		C9F03716285C4CA90063B355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9F03718285C4CA90063B355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C9F0371D285C4CA90063B355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 				C9F0F8CD2863B6C4001C2582 /* CoreDataExt.swift */,
 				C9F0F8D02863B6DF001C2582 /* SegueExt.swift */,
 				C9F0F8E128665F0F001C2582 /* DialogExt.swift */,
+				C9A8B1EB28C186630066EE09 /* UserDefaultsExt.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -452,6 +456,7 @@
 				C99EC1AA285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C99EC1B1285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
 				C9A7C814286EB4230022B06B /* PriceTextField.swift in Sources */,
+				C9A8B1ED28C186630066EE09 /* UserDefaultsExt.swift in Sources */,
 				C9F0F8CF2863B6C4001C2582 /* CoreDataExt.swift in Sources */,
 				C9914402285D576300C59ADE /* AppDelegate.swift in Sources */,
 				C9F0F8D22863B6DF001C2582 /* SegueExt.swift in Sources */,
@@ -483,6 +488,7 @@
 				C9F0F8C62863A337001C2582 /* RegisterStatesTableViewController.swift in Sources */,
 				C9F0F8CE2863B6C4001C2582 /* CoreDataExt.swift in Sources */,
 				C9F0F8C02863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
+				C9A8B1EC28C186630066EE09 /* UserDefaultsExt.swift in Sources */,
 				C9F0F8E228665F0F001C2582 /* DialogExt.swift in Sources */,
 				C99EC1A9285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				C91B6F862861898D009D3C7B /* AnyExt.swift in Sources */,
