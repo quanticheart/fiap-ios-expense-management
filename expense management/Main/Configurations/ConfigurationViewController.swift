@@ -19,4 +19,11 @@ class ConfigurationViewController: UIViewController {
         
         
     }
+    
+    @IBAction func editIR(_ sender: Any) {
+        showDialog(labelOK: "BTN_LABEL_UPDATE".localize(), labelCancel: "BTN_LABEL_CANCEL".localize(), placeholder: "SEARCH_STATE_PLACEHOLDER".localize(),
+                   text: "", callback: { text in
+            
+        })
+    }
 }

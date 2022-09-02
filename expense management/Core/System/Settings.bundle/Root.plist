@@ -10,6 +10,32 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
+			<string>Valores</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>IR</string>
+			<key>Key</key>
+			<string>IR</string>
+			<key>DefaultValue</key>
+			<string>6%</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Dolar</string>
+			<key>Key</key>
+			<string>DOLAR</string>
+			<key>DefaultValue</key>
+			<string>R$ 5,00</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
 			<string>Config</string>
 		</dict>
 		<dict>

@@ -15,7 +15,7 @@
                     <tabBarItem key="tabBarItem" title="TAB 2" image="ic_tab_edit" id="1rx-iS-CBd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aIE-FM-OrA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="app_primary"/>
                         <textAttributes key="titleTextAttributes">
@@ -79,6 +79,9 @@
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="bIy-w2-ggf">
                                 <color key="tintColor" name="app_primary"/>
+                                <connections>
+                                    <action selector="editIR:" destination="CJ9-qI-nOb" id="CjS-77-vz3"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

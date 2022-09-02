@@ -12,6 +12,8 @@ class SettingsBundleHelper {
     
     struct SettingsBundleKeys {
         static let Reset = "RESET_APP_KEY"
+        static let Dolar = "DOLAR"
+        static let Ir = "IR"
         static let BuildVersionKey = "build_preference"
         static let AppVersionKey = "version_preference"
         static let darkModeKey = "dark_preference"
@@ -31,20 +33,28 @@ class SettingsBundleHelper {
     class func setVersionAndBuildNumber() {
         let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         UserDefaults.standard.set(version, forKey: SettingsBundleKeys.AppVersionKey)
+        
         let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
         UserDefaults.standard.set(build, forKey: SettingsBundleKeys.BuildVersionKey)
+    }
+    
+    class func setVlues() {
+        let dolar = UserDefaults.standard.string(forKey: SettingsBundleKeys.Dolar)
+        UserDefaults.standard.set("5.00", forKey: SettingsBundleKeys.Dolar)
+        
+        UserDefaults.standard.set("6", forKey: SettingsBundleKeys.Ir)
     }
 }
 
 extension UIViewController {
-    func registerSettingsBundleObserver(){
+    func registerSettingsBundleObserver() {
         let appDefaults = [String:AnyObject]()
         UserDefaults.standard.register(defaults: appDefaults)
         notificationObserver()
         defaultsChanged()
     }
     
-    @objc func defaultsChanged(){
+    @objc func defaultsChanged() {
         if UserDefaults.standard.bool(forKey: "RedThemeKey") {
             self.view.backgroundColor = UIColor.red
         } else {
@@ -52,9 +62,8 @@ extension UIViewController {
         }
     }
     
-    func notificationObserver(){
+    func notificationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
-        
     }
     
 }

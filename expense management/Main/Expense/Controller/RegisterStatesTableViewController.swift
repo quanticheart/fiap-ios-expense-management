@@ -46,7 +46,9 @@ class RegisterStatesTableViewController: UITableViewController {
     private func loadStates() {
         states = loadDatabase(with: State.self, sortBy: "name")
         statesFiltered = states
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func addState(_ sender: Any) {
@@ -55,14 +57,14 @@ class RegisterStatesTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if states.count == 0 {
+        if statesFiltered.count == 0 {
             self.tableView.showMenssage("MSG_STATES_LIST_EMPTY".localize())
             searchBar.isHidden = true
             return 0
         } else {
             let count = statesFiltered.count
             searchBar.isHidden = false
-//            self.tableView.hideMessage()
+            self.tableView.hideMessage()
             return count
         }
     }
@@ -109,7 +111,6 @@ class RegisterStatesTableViewController: UITableViewController {
             }
             self.statesFiltered.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            
             completionHandler(true)
         }
         deleteAction.backgroundColor = .systemRed
@@ -136,6 +137,7 @@ extension RegisterStatesTableViewController: UISearchBarDelegate {
         // filteredData used to get the filtered result
         if (searchText == ""){
             statesFiltered = states
+            tableView.hideMessage()
         }else{
             statesFiltered = []
             // you can do any kind of filtering here based on user input
