@@ -143,6 +143,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		778213B728C3A307007DD7A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C99143FC285D248300C59ADE /* LaunchScreenDebug.storyboard */,
+				C9F03724285C4CB40063B355 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		778213B828C3A347007DD7A4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				778213B928C3A352007DD7A4 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		778213B928C3A352007DD7A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C94D3095285E4E4D005443C8 /* MainViewController.swift */,
+				C9F0371C285C4CA90063B355 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C94D3098285E5176005443C8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +279,8 @@
 		C9F03715285C4CA90063B355 /* expense management */ = {
 			isa = PBXGroup;
 			children = (
-				C9F0F8CB2863B487001C2582 /* Repository */,
-				C9F0372F285C4E270063B355 /* Main */,
+				C9F0F8CB2863B487001C2582 /* AppDelegate */,
+				C9F0372F285C4E270063B355 /* Modules */,
 				C9F0372E285C4DEB0063B355 /* Core */,
 				C9F03734285CF3930063B355 /* Localizable.strings */,
 				C9F0373F285D004C0063B355 /* Info.plist */,
@@ -265,6 +291,7 @@
 		C9F0372E285C4DEB0063B355 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				778213B728C3A307007DD7A4 /* Resources */,
 				C9A7C8182870B9910022B06B /* System */,
 				C9F0F8DD286535FF001C2582 /* CustonView */,
 				C94D3098285E5176005443C8 /* Extentions */,
@@ -274,20 +301,15 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		C9F0372F285C4E270063B355 /* Main */ = {
+		C9F0372F285C4E270063B355 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				778213B828C3A347007DD7A4 /* Main */,
 				C99EC1A5285FC0DC0071E7A4 /* Resume */,
 				C99EC1A4285FC0CB0071E7A4 /* Configurations */,
 				C99EC1A3285FC0B10071E7A4 /* Expense */,
-				C9F0371C285C4CA90063B355 /* Main.storyboard */,
-				C9F03724285C4CB40063B355 /* LaunchScreen.storyboard */,
-				C99143FC285D248300C59ADE /* LaunchScreenDebug.storyboard */,
-				C9F03716285C4CA90063B355 /* AppDelegate.swift */,
-				C9F03718285C4CA90063B355 /* SceneDelegate.swift */,
-				C94D3095285E4E4D005443C8 /* MainViewController.swift */,
 			);
-			path = Main;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		C9F0F8BE2863A259001C2582 /* List */ = {
@@ -299,11 +321,13 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		C9F0F8CB2863B487001C2582 /* Repository */ = {
+		C9F0F8CB2863B487001C2582 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				C9F03716285C4CA90063B355 /* AppDelegate.swift */,
+				C9F03718285C4CA90063B355 /* SceneDelegate.swift */,
 			);
-			path = Repository;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		C9F0F8CC2863B6AC001C2582 /* System */ = {
