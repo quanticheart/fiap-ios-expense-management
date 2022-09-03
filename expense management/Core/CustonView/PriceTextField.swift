@@ -33,7 +33,7 @@ class UIPriceTextField : UITextField {
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "R$"
+        formatter.currencySymbol = "$"
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         

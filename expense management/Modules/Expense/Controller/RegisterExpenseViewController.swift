@@ -12,16 +12,18 @@ final class RegisterExpenseViewController: UIViewController {
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldPrice: UIPriceTextField!
+    @IBOutlet weak var creditCardLabel: UILabel!
+    @IBOutlet weak var creditCardSwitch: UISwitch!
     @IBOutlet weak var labelSelectState: UILabel!
     @IBOutlet weak var btnSelectImage: UIButton!
     @IBOutlet weak var labelInsertDescription: UILabel!
     @IBOutlet weak var textDescription: UITextView!
     @IBOutlet weak var btnInsert: UIButton!
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var image: UIImageView!
     
     var expense: Expense?
-    var selectedState: State? = nil {
+    private var selectedState: State? = nil {
         didSet {
             if selectedState == nil {
                 labelSelectState.text = "HINT_SELECT_STATE".localize()
@@ -37,6 +39,7 @@ final class RegisterExpenseViewController: UIViewController {
         super.viewDidLoad()
         setupLocalization()
         setupFields()
+        setFields()
     }
     
     private func setupFields() {
@@ -47,6 +50,7 @@ final class RegisterExpenseViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+        scrollView.endEditing(true)
     }
     
     private func setupLocalization() {
@@ -59,17 +63,19 @@ final class RegisterExpenseViewController: UIViewController {
         btnSelectImage.setTitle("HINT_SELECT_IMAGE".localize(),for: .normal)
         labelInsertDescription?.text = "HINT_LABEL_DESCRIPTION".localize()
         btnInsert.setTitle("BTN_LABEL_INSERT".localize(),for: .normal)
-        
+    }
+    
+    private func setFields() {
         if let expense = expense {
             textFieldName.text = expense.name
             textFieldPrice.text = expense.price.toPriceLabel()
+            creditCardSwitch.isOn = expense.isCreditCard
             labelSelectState.text = expense.state?.name
             textDescription.text = expense.desc
             image.image = expense.image?.toUIImage()
             navigation.title = "NAVIGATION_UPDATE".localize()
             btnInsert.setTitle("BTN_LABEL_UPDATE".localize(), for: .normal)
         }
-        // Do any additional setup after loading the view.
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -96,9 +102,11 @@ final class RegisterExpenseViewController: UIViewController {
         }
         expense?.name = textFieldName.text
         expense?.price = textFieldPrice.price()
+        expense?.isCreditCard = creditCardSwitch.isOn
         expense?.state = selectedState
         expense?.image = self.image.image?.jpegData(compressionQuality: 0.8)
         expense?.desc = textDescription.text
+        
         do {
             try context.save()
             navigationController?.popViewController(animated: true)

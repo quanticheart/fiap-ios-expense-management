@@ -21,7 +21,9 @@ final class DetailsExpenseViewController: UIViewController {
         super.viewWillAppear(animated)
         if let expense = expense {
             labelNmae.text = expense.name
-            labelPrice.text = expense.price.toPriceLabel()
+            if let usPrice = expense.price.toPriceLabel() {
+                labelPrice.text = expense.isCreditCard ? usPrice + " / R$ 78,19 - (Pago com cartão de crédito)" : usPrice
+            }
             labelState.text = expense.state?.name
             labelDescription.text = expense.desc
             image.image = expense.image?.toUIImage()

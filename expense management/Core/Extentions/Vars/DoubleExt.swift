@@ -12,7 +12,7 @@ extension Double {
     func toPriceLabel() -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "R$"
+        formatter.currencySymbol = "$"
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         

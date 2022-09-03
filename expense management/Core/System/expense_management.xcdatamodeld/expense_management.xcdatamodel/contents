@@ -3,6 +3,7 @@
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isCreditCard" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="expenses" inverseEntity="State"/>
@@ -12,7 +13,7 @@
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" inverseName="state" inverseEntity="Expense"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-264.7957153320312" positionY="-28.3568115234375" width="128" height="118"/>
+        <element name="Expense" positionX="-264.7957153320312" positionY="-28.3568115234375" width="128" height="119"/>
         <element name="State" positionX="-54" positionY="18" width="128" height="59"/>
     </elements>
 </model>
