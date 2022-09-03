@@ -7,7 +7,11 @@
 
 import UIKit
 
-class RegisterStatesTableViewController: UITableViewController {
+protocol StateDelegate: AnyObject {
+    func setSelected(_ state: State)
+}
+
+final class RegisterStatesTableViewController: UITableViewController {
     
     @IBOutlet weak var navigation: UINavigationItem!
     
@@ -30,18 +34,15 @@ class RegisterStatesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadStates()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigation.title = "NAVIGATION_INSERT_STATE".localize()
-        searchBar.placeholder = "SEARCH_STATE_PLACEHOLDER".localize()
-        searchBar.delegate = self
-        
+        setupView()
         loadStates()
     }
-    
     
     private func loadStates() {
         states = loadDatabase(with: State.self, sortBy: "name")
@@ -51,9 +52,30 @@ class RegisterStatesTableViewController: UITableViewController {
         }
     }
     
+    fileprivate func setupView() {
+        navigation.title = "NAVIGATION_INSERT_STATE".localize()
+        searchBar.placeholder = "SEARCH_STATE_PLACEHOLDER".localize()
+        searchBar.delegate = self
+    }
+    
+    private func showAlert(for state: State? = nil) {
+        showDialog(labelOK: state == nil ? "NAVIGATION_INSERT".localize() : "BTN_LABEL_UPDATE".localize(), labelCancel: "BTN_LABEL_CANCEL".localize(), placeholder: "SEARCH_STATE_PLACEHOLDER".localize(), text: state?.name, callback: { text in
+            let state = self.selectedState ?? State(context: self.context)
+            state.name = text
+            try? self.context.save()
+            self.loadStates()
+        })
+    }
+    
+    //MARK: - Actions
     @IBAction func addState(_ sender: Any) {
         showAlert()
     }
+    
+}
+
+//MARK: - Overriding Methods
+extension RegisterStatesTableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -113,32 +135,22 @@ class RegisterStatesTableViewController: UITableViewController {
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
+        
         deleteAction.backgroundColor = .systemRed
         deleteAction.image = UIImage(systemName: "trash")
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    private func showAlert(for state: State? = nil){
-        showDialog(labelOK: state == nil ? "NAVIGATION_INSERT".localize() : "BTN_LABEL_UPDATE".localize(), labelCancel: "BTN_LABEL_CANCEL".localize(), placeholder: "SEARCH_STATE_PLACEHOLDER".localize(), text: state?.name, callback: { text in
-            let state = self.selectedState ?? State(context: self.context)
-            state.name = text
-            try? self.context.save()
-            self.loadStates()
-        })
-    }
-    
 }
 
 extension RegisterStatesTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // searchText will contain user input
-        // in allData I have kept all data of the table
-        // filteredData used to get the filtered result
-        if (searchText == ""){
+        
+        if (searchText == "") {
             statesFiltered = states
             tableView.hideMessage()
-        }else{
+        } else{
             statesFiltered = []
             // you can do any kind of filtering here based on user input
             statesFiltered = states.filter{
@@ -151,21 +163,13 @@ extension RegisterStatesTableViewController: UISearchBarDelegate {
                 tableView.hideMessage()
             }
         }
-        // lastly you need to update tableView using filteredData so that the filtered rows are only shown
-        //As you use SVGdata for tableView, after filtering you have to put all filtered data into SVGdata before reloading the table.
+        
         self.tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         searchBar.text = ""
-        //        searchdata = countries
-        
         searchBar.endEditing(true)
         self.tableView.reloadData()
     }
-}
-
-
-protocol StateDelegate: AnyObject {
-    func setSelected(_ state: State)
 }

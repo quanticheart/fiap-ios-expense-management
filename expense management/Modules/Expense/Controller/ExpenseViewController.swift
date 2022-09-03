@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ExpenseViewController: UITableViewController {
+final class ExpenseViewController: UITableViewController {
     
     @IBOutlet weak var navigation: UINavigationItem!
     
@@ -38,9 +38,10 @@ class ExpenseViewController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+}
+
+//MARK: - Overriding Methods
+extension ExpenseViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = fetchedResultsController.fetchedObjects?.count ?? 0
@@ -60,7 +61,7 @@ class ExpenseViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         let cell = tableView.dequeueReusableCell(withIdentifier: "cellExpense", for: indexPath) as? ExpenseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellExpense", for: indexPath) as? ExpenseTableViewCell
         
         let expense = fetchedResultsController.object(at: indexPath)
         cell!.config(with: expense)
@@ -80,6 +81,8 @@ class ExpenseViewController: UITableViewController {
 
 extension ExpenseViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

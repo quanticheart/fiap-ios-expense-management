@@ -7,8 +7,8 @@
 
 import UIKit
 
-class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
- 
+final class RegisterExpenseViewController: UIViewController {
+    
     @IBOutlet weak var navigation: UINavigationItem!
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldPrice: UIPriceTextField!
@@ -20,7 +20,7 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     
     @IBOutlet weak var image: UIImageView!
     
-    var expense: Expense!
+    var expense: Expense?
     var selectedState: State? = nil {
         didSet {
             if selectedState == nil {
@@ -35,7 +35,22 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dialogImage = DialogImagePicker(presentationController:self, delegate:self)
+        setupLocalization()
+        setupFields()
+    }
+    
+    private func setupFields() {
+        textFieldPrice.keyboardType = .numberPad
+        let tap = UIGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    private func setupLocalization() {
+        dialogImage = DialogImagePicker(presentationController: self, delegate:self)
         
         navigation.title = "NAVIGATION_INSERT".localize()
         textFieldName.placeholder = "HINT_NAME_EXPENSE".localize()
@@ -63,6 +78,19 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     }
     
     @IBAction func insertItem(_ sender: Any) {
+        
+        guard let name = textFieldName.text,
+              let price = textFieldPrice.text,
+              !name.isEmpty,
+              !price.isEmpty
+        else {
+            let alert = UIAlertController(title: "Atenção", message: "Verifique os campos em branco", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(alert, animated: true)
+            
+            return
+        }
+        
         if expense == nil {
             expense = Expense(context: context)
         }
@@ -79,16 +107,12 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
         }
     }
     
+    //MARK: - Actions
     @IBAction func selectImage(_ sender: Any) {
         dialogImage?.present()
     }
     
-    func didSelect(image: UIImage?) {
-        if let img = image{
-            self.image.image = img
-        }
-    }
-    
+    //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let stateVC = segue.destination as? RegisterStatesTableViewController
         stateVC?.delegate = self
@@ -97,6 +121,18 @@ class RegisterExpenseViewController: UIViewController, ImagePickerDelegate{
     }
 }
 
+// MARK: - ImagePickerDelegate
+extension RegisterExpenseViewController: ImagePickerDelegate {
+    
+    func didSelect(image: UIImage?) {
+        if let img = image{
+            self.image.image = img
+        }
+    }
+    
+}
+
+// MARK: - StateDelegate
 extension RegisterExpenseViewController: StateDelegate {
     func setSelected(_ state: State) {
         selectedState = state

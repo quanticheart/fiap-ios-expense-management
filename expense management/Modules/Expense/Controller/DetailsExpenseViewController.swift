@@ -7,19 +7,19 @@
 
 import UIKit
 
-class DetailsExpenseViewController: UIViewController {
-
+final class DetailsExpenseViewController: UIViewController {
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var labelNmae: UILabel!
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelState: UILabel!
     @IBOutlet weak var labelDescription: UITextView!
     
-    var expense: Expense!
+    var expense: Expense?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if expense != nil {
+        if let expense = expense {
             labelNmae.text = expense.name
             labelPrice.text = expense.price.toPriceLabel()
             labelState.text = expense.state?.name
@@ -30,7 +30,7 @@ class DetailsExpenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
