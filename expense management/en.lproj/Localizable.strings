@@ -6,8 +6,34 @@
   
 */
 
-"TAB1" = "Expanse";
+"TAB1" = "Expense";
 "TAB2" = "Config";
-"TAB3" = "Resume";
+"TAB3" = "Summary";
 
-"EXPENSE_LIST_EMPTY" = "Click in + to add new expense";
+"MSG_EXPENSE_LIST_EMPTY" = "Tap + to add a new expense";
+"MSG_STATES_LIST_EMPTY" = "Tap + to add a new state";
+"MSG_STATES_SEARCH_EMPTY" = "No state was found";
+
+"NAVIGATION_INSERT" = "Register";
+"NAVIGATION_UPDATE" = "Update";
+"NAVIGATION_INSERT_STATE" = "States";
+
+"HINT_NAME_EXPENSE" = "The item's name";
+"HINT_PRICE_EXPENSE" = "Type the amount";
+"HINT_SELECT_STATE" = "Select the state of the purchase";
+"HINT_SELECT_IMAGE" = "Select the items's image";
+"HINT_LABEL_DESCRIPTION" = "Description";
+
+"BTN_LABEL_INSERT" = "Insert item";
+"BTN_LABEL_UPDATE" = "Update item";
+"BTN_LABEL_CANCEL" = "Cancel";
+"BTN_LABEL_EXCLUDE" = "Delete";
+
+"DIALOG_IMG_MSG_TITLE" = "Choose an image";
+"DIALOG_IMG_MSG_SUBTITLE" = "Where do you want to choose the image from?";
+"DIALOG_IMG_OPTION_CAMERA" = "Camera";
+"DIALOG_IMG_OPTION_LIBRARY" = "Library";
+"DIALOG_IMG_OPTION_ALBUM" = "Photo Album";
+
+"DIALOG_STATE_PLACEHOLDER" = "Photo Album";
+"SEARCH_STATE_PLACEHOLDER" = "Type the name of the state";
