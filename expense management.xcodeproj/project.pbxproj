@@ -11,6 +11,8 @@
 		778213BE28C4058A007DD7A4 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BC28C3FA79007DD7A4 /* SummaryController.swift */; };
 		778213C028C50C64007DD7A4 /* NSObjetc+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */; };
 		778213C128C50C79007DD7A4 /* NSObjetc+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */; };
+		778213C828C561BD007DD7A4 /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213C728C561BD007DD7A4 /* ConfigurationController.swift */; };
+		778213C928C56B31007DD7A4 /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213C728C561BD007DD7A4 /* ConfigurationController.swift */; };
 		C91B6F8128614D0D009D3C7B /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8028614D0D009D3C7B /* ImageExt.swift */; };
 		C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8028614D0D009D3C7B /* ImageExt.swift */; };
 		C91B6F8428618956009D3C7B /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8328618956009D3C7B /* DoubleExt.swift */; };
@@ -87,6 +89,7 @@
 /* Begin PBXFileReference section */
 		778213BC28C3FA79007DD7A4 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjetc+Ext.swift"; sourceTree = "<group>"; };
+		778213C728C561BD007DD7A4 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		C91B6F8028614D0D009D3C7B /* ImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExt.swift; sourceTree = "<group>"; };
 		C91B6F8328618956009D3C7B /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
 		C91B6F852861898D009D3C7B /* AnyExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyExt.swift; sourceTree = "<group>"; };
@@ -192,6 +195,39 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		778213C328C56144007DD7A4 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				778213C428C56150007DD7A4 /* View */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		778213C428C56150007DD7A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0F8C52863A337001C2582 /* RegisterStatesTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		778213C528C56189007DD7A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C99EC1B5285FDB100071E7A4 /* Configuration.storyboard */,
+				C99EC1AF285FD9A30071E7A4 /* ConfigurationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		778213C628C56194007DD7A4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				778213C728C561BD007DD7A4 /* ConfigurationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		C94D3098285E5176005443C8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,21 +260,21 @@
 			path = Vars;
 			sourceTree = "<group>";
 		};
-		C99EC1A3285FC0B10071E7A4 /* Expense */ = {
+		C99EC1A3285FC0B10071E7A4 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
 				C99EC1C528613C090071E7A4 /* View */,
 				C99EC1C628613C110071E7A4 /* Controller */,
 				C99EC1C428613BF70071E7A4 /* Model */,
 			);
-			path = Expense;
+			path = Expenses;
 			sourceTree = "<group>";
 		};
 		C99EC1A4285FC0CB0071E7A4 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				C99EC1B5285FDB100071E7A4 /* Configuration.storyboard */,
-				C99EC1AF285FD9A30071E7A4 /* ConfigurationViewController.swift */,
+				778213C628C56194007DD7A4 /* Controller */,
+				778213C528C56189007DD7A4 /* View */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -274,7 +310,6 @@
 				C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */,
 				C9F0F8BF2863A2A0001C2582 /* RegisterExpenseViewController.swift */,
 				C9F0F8C22863A2F0001C2582 /* DetailsExpenseViewController.swift */,
-				C9F0F8C52863A337001C2582 /* RegisterStatesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,10 +363,11 @@
 		C9F0372F285C4E270063B355 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				778213C328C56144007DD7A4 /* States */,
 				778213B828C3A347007DD7A4 /* Main */,
 				C99EC1A5285FC0DC0071E7A4 /* Resume */,
 				C99EC1A4285FC0CB0071E7A4 /* Configurations */,
-				C99EC1A3285FC0B10071E7A4 /* Expense */,
+				C99EC1A3285FC0B10071E7A4 /* Expenses */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -500,6 +536,7 @@
 				C9F0F8E328665F0F001C2582 /* DialogExt.swift in Sources */,
 				C99EC1C928613C7C0071E7A4 /* ExpenseTableViewCell.swift in Sources */,
 				C99EC1C0286035550071E7A4 /* ResumeViewController.swift in Sources */,
+				778213C928C56B31007DD7A4 /* ConfigurationController.swift in Sources */,
 				C9F0F8C42863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
 				C99EC1AA285FC6990071E7A4 /* ExpenseViewController.swift in Sources */,
 				778213BE28C4058A007DD7A4 /* SummaryController.swift in Sources */,
@@ -547,6 +584,7 @@
 				C99EC1B0285FD9A30071E7A4 /* ConfigurationViewController.swift in Sources */,
 				C9A7C81A2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */,
 				C9F03717285C4CA90063B355 /* AppDelegate.swift in Sources */,
+				778213C828C561BD007DD7A4 /* ConfigurationController.swift in Sources */,
 				C9F0F8D42863BF29001C2582 /* UIViewControllerExt.swift in Sources */,
 				C9F0F8C32863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
 				C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */,

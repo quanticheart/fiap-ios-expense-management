@@ -44,14 +44,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resumo todal das despesas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-cx-YOu">
-                                <rect key="frame" x="16" y="156" width="382" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resumo total das despesas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-cx-YOu">
+                                <rect key="frame" x="16" y="60" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" name="text_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h3U-iF-dyk">
-                                <rect key="frame" x="0.0" y="176.5" width="414" height="636.5"/>
+                                <rect key="frame" x="0.0" y="96.5" width="414" height="716.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -61,13 +61,14 @@
                             <constraint firstItem="h3U-iF-dyk" firstAttribute="leading" secondItem="dZQ-Hg-o8F" secondAttribute="leading" id="8Yl-YM-gkQ"/>
                             <constraint firstItem="Nqh-cx-YOu" firstAttribute="leading" secondItem="dZQ-Hg-o8F" secondAttribute="leading" constant="16" id="CEa-F4-k5e"/>
                             <constraint firstItem="dZQ-Hg-o8F" firstAttribute="bottom" secondItem="h3U-iF-dyk" secondAttribute="bottom" id="Y2v-tf-dyt"/>
-                            <constraint firstItem="h3U-iF-dyk" firstAttribute="top" secondItem="Nqh-cx-YOu" secondAttribute="bottom" id="gUe-mD-H64"/>
+                            <constraint firstItem="h3U-iF-dyk" firstAttribute="top" secondItem="Nqh-cx-YOu" secondAttribute="bottom" constant="16" id="gUe-mD-H64"/>
                             <constraint firstItem="Nqh-cx-YOu" firstAttribute="top" secondItem="dZQ-Hg-o8F" secondAttribute="top" constant="16" id="nHC-do-1IK"/>
                             <constraint firstItem="dZQ-Hg-o8F" firstAttribute="trailing" secondItem="Nqh-cx-YOu" secondAttribute="trailing" constant="16" id="tcn-Sr-JUD"/>
                             <constraint firstItem="dZQ-Hg-o8F" firstAttribute="trailing" secondItem="h3U-iF-dyk" secondAttribute="trailing" id="uIW-B1-w6Y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RK7-fc-B2e"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="RK7-fc-B2e"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tab" destination="wZf-hQ-CuJ" id="62Q-G0-gfz"/>
