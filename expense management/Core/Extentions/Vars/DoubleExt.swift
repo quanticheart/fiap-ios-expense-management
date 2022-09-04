@@ -9,10 +9,15 @@ import Foundation
 
 extension Double {
     
-    func toPriceLabel() -> String? {
+    enum CurrencyType: String {
+        case dolar = "$"
+        case real = "R$"
+    }
+    
+    func toPriceLabel(_ currencyType: CurrencyType) -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
+        formatter.currencySymbol = currencyType.rawValue
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		778213BD28C3FA79007DD7A4 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BC28C3FA79007DD7A4 /* SummaryController.swift */; };
 		778213BE28C4058A007DD7A4 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BC28C3FA79007DD7A4 /* SummaryController.swift */; };
+		778213C028C50C64007DD7A4 /* NSObjetc+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */; };
+		778213C128C50C79007DD7A4 /* NSObjetc+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */; };
 		C91B6F8128614D0D009D3C7B /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8028614D0D009D3C7B /* ImageExt.swift */; };
 		C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8028614D0D009D3C7B /* ImageExt.swift */; };
 		C91B6F8428618956009D3C7B /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8328618956009D3C7B /* DoubleExt.swift */; };
@@ -84,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		778213BC28C3FA79007DD7A4 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
+		778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjetc+Ext.swift"; sourceTree = "<group>"; };
 		C91B6F8028614D0D009D3C7B /* ImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExt.swift; sourceTree = "<group>"; };
 		C91B6F8328618956009D3C7B /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
 		C91B6F852861898D009D3C7B /* AnyExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyExt.swift; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 				C9F0F8CC2863B6AC001C2582 /* System */,
 				C94D309D285E51AC005443C8 /* Vars */,
 				C94D309C285E51A4005443C8 /* View */,
+				778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -514,6 +518,7 @@
 				C94D3097285E4E4D005443C8 /* MainViewController.swift in Sources */,
 				C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */,
 				C9F0F8C12863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
+				778213C128C50C79007DD7A4 /* NSObjetc+Ext.swift in Sources */,
 				C94D30A0285E51CA005443C8 /* StringExt.swift in Sources */,
 				C9F0F8D92863CCFD001C2582 /* TableViewExt.swift in Sources */,
 				C91B6F8728622A4C009D3C7B /* DoubleExt.swift in Sources */,
@@ -546,6 +551,7 @@
 				C9F0F8C32863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
 				C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */,
 				C9F0F8D82863CCFD001C2582 /* TableViewExt.swift in Sources */,
+				778213C028C50C64007DD7A4 /* NSObjetc+Ext.swift in Sources */,
 				C9F03721285C4CA90063B355 /* expense_management.xcdatamodeld in Sources */,
 				C94D3096285E4E4D005443C8 /* MainViewController.swift in Sources */,
 				C91B6F8128614D0D009D3C7B /* ImageExt.swift in Sources */,

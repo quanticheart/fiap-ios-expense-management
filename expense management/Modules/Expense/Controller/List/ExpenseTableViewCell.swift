@@ -16,7 +16,7 @@ class ExpenseTableViewCell: UITableViewCell {
     
     func config(with expense: Expense) {
         itemName.text = expense.name
-        itemPrice.text = expense.price.toPriceLabel()
+        itemPrice.text = expense.price.toPriceLabel(.dolar)
         itemImage.image = expense.image?.toUIImage()
     }
 }

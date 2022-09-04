@@ -8,7 +8,7 @@
 import UIKit
 
 final class ResumeViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,27 +17,41 @@ final class ResumeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controller = SummaryController()
-        controller?.loadExpenses()
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        controller?.loadExpenses()
     }
     
     private func setup() {
+        controller?.delegate = self
         tableView.dataSource = self
     }
     
 }
 
+extension ResumeViewController: SummaryControllerDelegate {
+    func didLoadExpenses() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+
 extension ResumeViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return controller?.getTitleForSection(section)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return controller?.getNumberOfSections() ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        controller?.getNumberOfROws() ?? 0
+        return controller?.getNumberOfRows(section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,8 +60,12 @@ extension ResumeViewController: UITableViewDataSource {
         
         let expense = controller?.getExpenseByIndex(indexPath)
         
-        cell.detailTextLabel?.text = expense?.name
-        cell.textLabel?.text = expense?.price.toPriceLabel()
+        if let real = expense?.price {
+            cell.textLabel?.text = ( real * 5.15).toPriceLabel(.real)
+        }
+        
+        //cell.textLabel?.text = expense?.price.toPriceLabel(.real)
+        cell.detailTextLabel?.text = expense?.price.toPriceLabel(.dolar)
         
         return cell
         

@@ -5,22 +5,26 @@
 //  Created by Alan Silva on 03/09/22.
 //
 
-import Foundation
-import CoreData
-
 import UIKit
 import CoreData
 
-extension NSObject {
-    var context: NSManagedObjectContext {
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        return appdelegate.persistentContainer.viewContext
-    }
+protocol SummaryControllerDelegate: AnyObject {
+    func didLoadExpenses()
 }
 
 final class SummaryController: NSObject {
     
     private var dataSource = [Expense]()
+    
+    private var creditCardExpenses: [Expense] {
+        self.dataSource.filter { $0.isCreditCard }
+    }
+    
+    private var otherExpenses: [Expense] {
+        self.dataSource.filter { !$0.isCreditCard }
+    }
+    
+    weak var delegate: SummaryControllerDelegate?
     
     func loadExpenses() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expense")
@@ -28,17 +32,53 @@ final class SummaryController: NSObject {
         do {
             let result = try context.fetch(fetchRequest) as? [Expense] ?? []
             dataSource = result
+            delegate?.didLoadExpenses()
         } catch {
             print("error")
         }
     }
     
-    func getNumberOfROws() -> Int {
-        return dataSource.count
+    func getNumberOfSections() -> Int {
+        return 2
+    }
+    
+    func getTitleForSection(_ section: Int) -> String {
+        switch section {
+        case 0:
+            return "Despesas com cartão de crédito"
+        case 1:
+            return "Despesas com outros métodos"
+        default:
+            return ""
+        }
+    }
+    
+    func getNumberOfRows(_ section: Int) -> Int {
+        
+        switch section {
+        case 0:
+            return creditCardExpenses.count
+        case 1:
+            return otherExpenses.count
+        default:
+            return 0
+        }
+        
+        //return dataSource.count
     }
     
     func getExpenseByIndex(_ indexPath: IndexPath) -> Expense {
-        return dataSource[indexPath.row]
+        
+        if indexPath.section == 0 {
+            return creditCardExpenses[indexPath.row]
+        } else {
+            return otherExpenses[indexPath.row]
+        }
+        
+        //        let creditCardExpenses = dataSource.filter { $0.isCreditCard }
+        //        let otherExpenses = dataSource.filter { !$0.isCreditCard }
+        
+        //return dataSource[indexPath.row]
     }
     
 }

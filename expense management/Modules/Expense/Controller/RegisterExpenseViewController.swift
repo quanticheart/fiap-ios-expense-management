@@ -63,7 +63,7 @@ final class RegisterExpenseViewController: UIViewController {
     private func setFields() {
         if let expense = expense {
             textFieldName.text = expense.name
-            textFieldPrice.text = expense.price.toPriceLabel()
+            textFieldPrice.text = expense.price.toPriceLabel(.dolar)
             creditCardSwitch.isOn = expense.isCreditCard
             labelSelectState.text = expense.state?.name
             textDescription.text = expense.desc
