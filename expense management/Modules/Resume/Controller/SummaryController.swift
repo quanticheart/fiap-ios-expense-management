@@ -16,12 +16,15 @@ final class SummaryController: NSObject {
     
     private var dataSource = [Expense]()
     
-    private var creditCardExpenses: [Expense] {
-        self.dataSource.filter { $0.isCreditCard }
+    private let iof = 0.06
+    private let cambio = 5.15
+    
+    private var creditCardExpenses: Double {
+        self.dataSource.filter { $0.isCreditCard }.map { $0.price }.reduce(0, +)
     }
     
-    private var otherExpenses: [Expense] {
-        self.dataSource.filter { !$0.isCreditCard }
+    private var otherExpenses: Double {
+        self.dataSource.filter { !$0.isCreditCard }.map { $0.price }.reduce(0, +)
     }
     
     weak var delegate: SummaryControllerDelegate?
@@ -54,31 +57,31 @@ final class SummaryController: NSObject {
     }
     
     func getNumberOfRows(_ section: Int) -> Int {
-        
-        switch section {
-        case 0:
-            return creditCardExpenses.count
-        case 1:
-            return otherExpenses.count
-        default:
-            return 0
-        }
-        
-        //return dataSource.count
+        return 1
     }
     
-    func getExpenseByIndex(_ indexPath: IndexPath) -> Expense {
+    func getExpenseByIndex(_ indexPath: IndexPath) -> (String, String) {
         
         if indexPath.section == 0 {
-            return creditCardExpenses[indexPath.row]
+            
+            let tax = creditCardExpenses * iof
+            
+            guard let real = ((creditCardExpenses + tax) * cambio).toPriceLabel(.real),
+                  let dolar = creditCardExpenses.toPriceLabel(.dolar) else {
+                return ("", "")
+            }
+            
+            return (real, dolar + " x \(cambio.toPriceLabel(.real) ?? "") + IOF(6%)")
         } else {
-            return otherExpenses[indexPath.row]
+            
+            guard let real = (otherExpenses * 5.15).toPriceLabel(.real),
+                  let dolar = otherExpenses.toPriceLabel(.dolar) else {
+                return ("", "")
+            }
+            
+            return (real, dolar)
         }
         
-        //        let creditCardExpenses = dataSource.filter { $0.isCreditCard }
-        //        let otherExpenses = dataSource.filter { !$0.isCreditCard }
-        
-        //return dataSource[indexPath.row]
     }
     
 }

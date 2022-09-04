@@ -60,12 +60,8 @@ extension ResumeViewController: UITableViewDataSource {
         
         let expense = controller?.getExpenseByIndex(indexPath)
         
-        if let real = expense?.price {
-            cell.textLabel?.text = ( real * 5.15).toPriceLabel(.real)
-        }
-        
-        //cell.textLabel?.text = expense?.price.toPriceLabel(.real)
-        cell.detailTextLabel?.text = expense?.price.toPriceLabel(.dolar)
+        cell.textLabel?.text = expense?.0
+        cell.detailTextLabel?.text = expense?.1
         
         return cell
         
