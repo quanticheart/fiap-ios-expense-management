@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,7 @@
                     <tabBarItem key="tabBarItem" title="TAB 3" image="ic_tab_calc" id="wZf-hQ-CuJ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aIE-FM-OrA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="app_primary"/>
                         <textAttributes key="titleTextAttributes">
@@ -43,25 +44,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-cx-YOu">
-                                <rect key="frame" x="16" y="198" width="382" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resumo todal das despesas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-cx-YOu">
+                                <rect key="frame" x="16" y="156" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" name="text_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h3U-iF-dyk">
+                                <rect key="frame" x="0.0" y="176.5" width="414" height="636.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dZQ-Hg-o8F"/>
                         <color key="backgroundColor" name="background_secondary"/>
                         <constraints>
+                            <constraint firstItem="h3U-iF-dyk" firstAttribute="leading" secondItem="dZQ-Hg-o8F" secondAttribute="leading" id="8Yl-YM-gkQ"/>
                             <constraint firstItem="Nqh-cx-YOu" firstAttribute="leading" secondItem="dZQ-Hg-o8F" secondAttribute="leading" constant="16" id="CEa-F4-k5e"/>
-                            <constraint firstItem="Nqh-cx-YOu" firstAttribute="top" secondItem="dZQ-Hg-o8F" secondAttribute="top" constant="50" id="nHC-do-1IK"/>
+                            <constraint firstItem="dZQ-Hg-o8F" firstAttribute="bottom" secondItem="h3U-iF-dyk" secondAttribute="bottom" id="Y2v-tf-dyt"/>
+                            <constraint firstItem="h3U-iF-dyk" firstAttribute="top" secondItem="Nqh-cx-YOu" secondAttribute="bottom" id="gUe-mD-H64"/>
+                            <constraint firstItem="Nqh-cx-YOu" firstAttribute="top" secondItem="dZQ-Hg-o8F" secondAttribute="top" constant="16" id="nHC-do-1IK"/>
                             <constraint firstItem="dZQ-Hg-o8F" firstAttribute="trailing" secondItem="Nqh-cx-YOu" secondAttribute="trailing" constant="16" id="tcn-Sr-JUD"/>
+                            <constraint firstItem="dZQ-Hg-o8F" firstAttribute="trailing" secondItem="h3U-iF-dyk" secondAttribute="trailing" id="uIW-B1-w6Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RK7-fc-B2e"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tab" destination="wZf-hQ-CuJ" id="62Q-G0-gfz"/>
+                        <outlet property="tableView" destination="h3U-iF-dyk" id="RIu-IS-iSu"/>
+                        <outlet property="titleLabel" destination="Nqh-cx-YOu" id="Gdm-lM-pFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rcm-cx-Vas" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -83,5 +94,8 @@
         <namedColor name="text_color">
             <color red="0.17299999296665192" green="0.24300000071525574" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

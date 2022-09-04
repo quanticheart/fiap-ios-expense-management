@@ -18,7 +18,7 @@
 "NAVIGATION_INSERT_STATE" = "Estados";
 
 "HINT_NAME_EXPENSE" = "Dígite o nome do item";
-"HINT_PRICE_EXPENSE" = "Dígite o valor gasto";
+"HINT_PRICE_EXPENSE" = "Valor (USD)";
 "HINT_SELECT_STATE" = "Selecione o estado de compra";
 "HINT_SELECT_IMAGE" = "Selecione a imagem do item";
 "HINT_LABEL_DESCRIPTION" = "Descrição da compra";

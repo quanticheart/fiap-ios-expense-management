@@ -14,7 +14,6 @@ protocol StateDelegate: AnyObject {
 final class RegisterStatesTableViewController: UITableViewController {
     
     @IBOutlet weak var navigation: UINavigationItem!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var finishBeforeSelect = false

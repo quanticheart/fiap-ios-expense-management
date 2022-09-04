@@ -19,7 +19,7 @@
 "NAVIGATION_INSERT_STATE" = "States";
 
 "HINT_NAME_EXPENSE" = "The item's name";
-"HINT_PRICE_EXPENSE" = "Type the amount";
+"HINT_PRICE_EXPENSE" = "Amount (USD)";
 "HINT_SELECT_STATE" = "Select the state of the purchase";
 "HINT_SELECT_IMAGE" = "Select the items's image";
 "HINT_LABEL_DESCRIPTION" = "Description";

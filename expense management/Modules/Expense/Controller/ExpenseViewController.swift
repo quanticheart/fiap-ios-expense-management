@@ -19,7 +19,7 @@ final class ExpenseViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigation.title = "TAB1".localize()
-        loadMovies()
+        loadExpenses()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,7 +30,7 @@ final class ExpenseViewController: UITableViewController {
         detailsViewController.expense = expense
     }
     
-    private func loadMovies() {
+    private func loadExpenses() {
         do {
             try fetchedResultsController.performFetch()
         } catch {

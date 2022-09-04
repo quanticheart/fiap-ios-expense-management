@@ -44,13 +44,8 @@ final class RegisterExpenseViewController: UIViewController {
     
     private func setupFields() {
         textFieldPrice.keyboardType = .numberPad
-        let tap = UIGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tap = UIGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-        scrollView.endEditing(true)
     }
     
     private func setupLocalization() {
@@ -87,8 +82,10 @@ final class RegisterExpenseViewController: UIViewController {
         
         guard let name = textFieldName.text,
               let price = textFieldPrice.text,
+              let state = selectedState?.name,
               !name.isEmpty,
-              !price.isEmpty
+              !price.isEmpty,
+              !state.isEmpty
         else {
             let alert = UIAlertController(title: "Atenção", message: "Verifique os campos em branco", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
