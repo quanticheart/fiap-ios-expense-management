@@ -79,7 +79,7 @@ final class SummaryController: NSObject {
                 return ("", "")
             }
             
-            return (real, dolar + " x \(cambio.toPriceLabel(.real) ?? "") + IOF(6%)")
+            return (real, dolar + " x \(cambio.toPriceLabel(.real) ?? "") + IOF(6,38%)")
         } else {
             
             guard let real = (otherExpenses * cambio).toPriceLabel(.real),

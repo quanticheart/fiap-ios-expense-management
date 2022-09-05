@@ -61,7 +61,7 @@ final class ConfigurationViewController: UIViewController {
         bar.items = [flexibleSpace, reset]
         bar.sizeToFit()
         dolarQuoteTextField.inputAccessoryView = bar
-        dolarQuoteTextField.keyboardType = .decimalPad
+        dolarQuoteTextField.keyboardType = .numbersAndPunctuation
         
         /*
         quotePicker.delegate = self
@@ -72,12 +72,25 @@ final class ConfigurationViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func didTapSave(_ sender: UIButton) {
-        let value = dolarQuoteTextField.text
+        
+        guard let value = dolarQuoteTextField.text else {
+            return
+        }
+        
         setUserString(forKey: "currentDolarExchange", value: value)
         
         if let double = (value as? NSString)?.doubleValue {
             setUserDouble(forKey: "currentDoubleDolarExchange", value: double)
         }
+        
+        let alertTitle = "Atenção"
+        let message = "Cotação atual salva"
+        let alert = UIAlertController(title: alertTitle,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+        
     }
     
 }

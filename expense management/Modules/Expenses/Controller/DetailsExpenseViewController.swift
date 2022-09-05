@@ -17,23 +17,33 @@ final class DetailsExpenseViewController: UIViewController {
     
     var expense: Expense?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupView()
+    }
+    
+    private func setupView() {
+        
+        let complementaryString = "Pago com cartão de crédito"
+        
         if let expense = expense {
             labelNmae.text = expense.name
             if let usPrice = expense.price.toPriceLabel(.dolar) {
-                labelPrice.text = expense.isCreditCard ? usPrice + " / R$ 78,19 - (Pago com cartão de crédito)" : usPrice
+                let value = getUserDouble(forKey: "currentDoubleDolarExchange")
+                let realPrice = expense.price * value
+                let real = realPrice.toPriceLabel(.real)
+                labelPrice.text = expense.isCreditCard ? usPrice + " / \(real ?? "") - (\(complementaryString))" : usPrice
             }
             labelState.text = expense.state?.name
             labelDescription.text = expense.desc
             image.image = expense.image?.toUIImage()
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
