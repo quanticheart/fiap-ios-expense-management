@@ -16,20 +16,21 @@ final class ConfigurationViewController: UIViewController {
     @IBOutlet weak var dolarQuoteTextField: UITextField!
     @IBOutlet weak var taxTextField: UITextField!
     
-    @IBOutlet weak var errorQuoteLabel: UILabel!
-    @IBOutlet weak var errorTaxlabel: UILabel!
-    
+    private let quotePicker: UIPickerView = UIPickerView()
+    private let taxPicker: UIPickerView = UIPickerView()
     private var controller: ConfigurationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         controller = ConfigurationController()
         setUp()
+        setupPickersAndTextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         controller?.loadStates()
+        loadSavedInfo()
     }
     
     private func setUp() {
@@ -38,7 +39,34 @@ final class ConfigurationViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         controller?.delegate = self
+        
+        let tap = UIGestureRecognizer(target: self, action: #selector(dismissScreen))
+        tableView.addGestureRecognizer(tap)
+        self.view.addGestureRecognizer(tap)
     }
+    
+    @objc func dismissScreen() {
+        dolarQuoteTextField.resignFirstResponder()
+    }
+    
+    private func loadSavedInfo() {
+        //check UserDefaults
+    }
+    
+    private func setupPickersAndTextField() {
+        let bar = UIToolbar()
+        let reset = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(hideKeyboard))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        bar.items = [flexibleSpace, reset]
+        bar.sizeToFit()
+        dolarQuoteTextField.inputAccessoryView = bar
+        
+        quotePicker.delegate = self
+        quotePicker.dataSource = self
+        
+        dolarQuoteTextField.inputView = quotePicker
+    }
+    
     
 }
 
@@ -88,4 +116,26 @@ extension ConfigurationViewController: ConfigurationControllerDelegate {
         }
     }
     
+}
+
+//MARK: - UIPickerViewDelegate & UIPickerViewDataSource
+extension ConfigurationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 10
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "5.01"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        dolarQuoteTextField.text = "5,01"
+        dolarQuoteTextField.resignFirstResponder()
+    }
+
 }
