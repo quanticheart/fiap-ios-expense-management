@@ -16,8 +16,8 @@ final class SummaryController: NSObject {
     
     private var dataSource = [Expense]()
     
-    private let iof = 0.06
-    private let cambio = 5.15
+    private let iof = 0.0638
+    private var cambio = 0.0
     
     private var creditCardExpenses: Double {
         self.dataSource.filter { $0.isCreditCard }.map { $0.price }.reduce(0, +)
@@ -29,7 +29,15 @@ final class SummaryController: NSObject {
     
     weak var delegate: SummaryControllerDelegate?
     
+    private func loadSavedInfo() {
+        let value = getUserDouble(forKey: "currentDoubleDolarExchange")
+        cambio = value
+    }
+    
     func loadExpenses() {
+        
+        loadSavedInfo()
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expense")
         
         do {
@@ -74,7 +82,7 @@ final class SummaryController: NSObject {
             return (real, dolar + " x \(cambio.toPriceLabel(.real) ?? "") + IOF(6%)")
         } else {
             
-            guard let real = (otherExpenses * 5.15).toPriceLabel(.real),
+            guard let real = (otherExpenses * cambio).toPriceLabel(.real),
                   let dolar = otherExpenses.toPriceLabel(.dolar) else {
                 return ("", "")
             }

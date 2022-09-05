@@ -16,8 +16,14 @@ protocol ConfigurationControllerDelegate: AnyObject {
 final class ConfigurationController: NSObject {
     
     private var states = [State]()
+    private var quoteValues = [Double]()
     
     weak var delegate: ConfigurationControllerDelegate?
+    
+    override init() {
+        super.init()
+        generateQuoteValues()
+    }
     
     func loadStates() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "State")
@@ -37,6 +43,16 @@ final class ConfigurationController: NSObject {
     
     func getStateName(_ indexPath: IndexPath) -> String {
         return states[indexPath.row].name ?? ""
+    }
+    
+    private func generateQuoteValues() {}
+    
+    func titleForPickerRow(row: Int) -> String {
+        quoteValues[row].toPriceLabel(.real) ?? ""
+    }
+    
+    func numberOfRowsInComponent() -> Int {
+        return quoteValues.count
     }
     
 }

@@ -50,7 +50,8 @@ final class ConfigurationViewController: UIViewController {
     }
     
     private func loadSavedInfo() {
-        //check UserDefaults
+        let saved = getUserString(forKey: "currentDolarExchange")
+        dolarQuoteTextField.text = saved
     }
     
     private func setupPickersAndTextField() {
@@ -60,13 +61,24 @@ final class ConfigurationViewController: UIViewController {
         bar.items = [flexibleSpace, reset]
         bar.sizeToFit()
         dolarQuoteTextField.inputAccessoryView = bar
+        dolarQuoteTextField.keyboardType = .decimalPad
         
+        /*
         quotePicker.delegate = self
         quotePicker.dataSource = self
-        
         dolarQuoteTextField.inputView = quotePicker
+         */
     }
     
+    //MARK: - Actions
+    @IBAction func didTapSave(_ sender: UIButton) {
+        let value = dolarQuoteTextField.text
+        setUserString(forKey: "currentDolarExchange", value: value)
+        
+        if let double = (value as? NSString)?.doubleValue {
+            setUserDouble(forKey: "currentDoubleDolarExchange", value: double)
+        }
+    }
     
 }
 
@@ -126,15 +138,15 @@ extension ConfigurationViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return controller?.numberOfRowsInComponent() ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "5.01"
+        return controller?.titleForPickerRow(row: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dolarQuoteTextField.text = "5,01"
+        dolarQuoteTextField.text = controller?.titleForPickerRow(row: row)
         dolarQuoteTextField.resignFirstResponder()
     }
 

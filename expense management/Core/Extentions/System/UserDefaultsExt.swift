@@ -22,3 +22,11 @@ func getUserBoolean(forKey: String) -> Bool {
 func setUserBoolean(forKey: String, value:Bool?) {
      UserDefaults.standard.set(value ?? false, forKey: forKey)
 }
+
+func getUserDouble(forKey: String) -> Double {
+    return UserDefaults.standard.double(forKey: forKey)
+}
+
+func setUserDouble(forKey: String, value: Double) {
+    UserDefaults.standard.set(value, forKey: forKey)
+}
