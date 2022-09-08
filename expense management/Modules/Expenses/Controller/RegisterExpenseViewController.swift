@@ -87,7 +87,10 @@ final class RegisterExpenseViewController: UIViewController {
               !price.isEmpty,
               !state.isEmpty
         else {
-            let alert = UIAlertController(title: "Atenção", message: "Verifique os campos em branco", preferredStyle: .alert)
+            
+            let title = "SUMMARY_ALERT_TITLE".localize()
+            let message = "SUMMARY_ALERT_MESSAGE".localize()
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             present(alert, animated: true)
             

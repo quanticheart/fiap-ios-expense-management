@@ -83,8 +83,8 @@ final class ConfigurationViewController: UIViewController {
             setUserDouble(forKey: "currentDoubleDolarExchange", value: double)
         }
         
-        let alertTitle = "Atenção"
-        let message = "Cotação atual salva"
+        let alertTitle = "CONFIG_ALERT_TITLE".localize()
+        let message = "CONFIG_ALERT_MESSAGE".localize()
         let alert = UIAlertController(title: alertTitle,
                                       message: message,
                                       preferredStyle: .alert)

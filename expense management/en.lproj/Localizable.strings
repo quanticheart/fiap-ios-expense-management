@@ -10,6 +10,7 @@
 "TAB2" = "Config";
 "TAB3" = "Summary";
 
+//MARK: - EXPENSE DETAILS SCREEN
 "MSG_EXPENSE_LIST_EMPTY" = "Tap + to add a new expense";
 "MSG_STATES_LIST_EMPTY" = "Tap + to add a new state";
 "MSG_STATES_SEARCH_EMPTY" = "No state was found";
@@ -37,3 +38,22 @@
 
 "DIALOG_STATE_PLACEHOLDER" = "Photo Album";
 "SEARCH_STATE_PLACEHOLDER" = "Type the name of the state";
+
+//MARK: - DETAILS
+"DETAILS_COMPL_TITLE" = "Paid with credit card";
+
+//MARK: - REGISTER EXPENSES
+"SUMMARY_ALERT_TITLE" = "Atention";
+"SUMMARY_ALERT_MESSAGE" = "Check the empty fields";
+
+//MARK: - SUMMARY SCREEN
+"SUMMARY_TITLE" = "Summary of expenses";
+"CREDIT_CARD_EXPENSES" = "Credit card expenses";
+"OTHER_EXPENSES" = "Expenses paid with other methods";
+
+//MARK: - CONFIG SCREEN
+"STATES_LIST" = "List of States";
+"SAVE_BUTTON_TITLE" = "Save";
+
+"CONFIG_ALERT_TITLE" = "Atention";
+"CONFIG_ALERT_MESSAGE" = "Current quote saved";

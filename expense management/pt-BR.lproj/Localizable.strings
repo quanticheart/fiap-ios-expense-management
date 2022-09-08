@@ -5,10 +5,12 @@
   Created by Jonatas Alves santos on 17/06/22.
   
 */
+
 "TAB1" = "Gastos";
 "TAB2" = "Config.";
 "TAB3" = "Resumo";
 
+//MARK: - EXPENSE DETAILS SCREEN
 "MSG_EXPENSE_LIST_EMPTY" = "Clique em + para adicionar uma nova despesa";
 "MSG_STATES_LIST_EMPTY" = "Clique em + para adicionar um novo estado";
 "MSG_STATES_SEARCH_EMPTY" = "Nada foi encontrado";
@@ -36,3 +38,22 @@
 
 "DIALOG_STATE_PLACEHOLDER" = "Álbum de Fotos";
 "SEARCH_STATE_PLACEHOLDER" = "Dígite o nome do estado";
+
+//MARK: - DETAILS
+"DETAILS_COMPL_TITLE" = "Pago com cartão de crédito";
+
+//MARK: - REGISTER EXPENSES
+"SUMMARY_ALERT_TITLE" = "Atenção";
+"SUMMARY_ALERT_MESSAGE" = "Verifique os campos em branco";
+
+//MARK: - SUMMARY SCREEN
+"SUMMARY_TITLE" = "Resumo total das despesas";
+"CREDIT_CARD_EXPENSES" = "Despesas com cartão de crédito";
+"OTHER_EXPENSES" = "Despesas com outros métodos";
+
+//MARK: - CONFIG SCREEN
+"STATES_LIST" = "Lista de estados";
+"SAVE_BUTTON_TITLE" = "Salvar";
+
+"CONFIG_ALERT_TITLE" = "Atenção";
+"CONFIG_ALERT_MESSAGE" = "Cotação atual salva";
