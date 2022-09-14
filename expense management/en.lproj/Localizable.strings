@@ -24,6 +24,7 @@
 "HINT_SELECT_STATE" = "Select the state of the purchase";
 "HINT_SELECT_IMAGE" = "Select the items's image";
 "HINT_LABEL_DESCRIPTION" = "Description";
+"HINT_LABEL_CREDIT" = "Credit?";
 
 "BTN_LABEL_INSERT" = "Insert item";
 "BTN_LABEL_UPDATE" = "Update item";

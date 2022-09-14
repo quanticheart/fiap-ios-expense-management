@@ -71,6 +71,12 @@ final class RegisterStatesTableViewController: UITableViewController {
         showAlert()
     }
     
+    fileprivate func updateTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
 }
 
 //MARK: - Overriding Methods
@@ -144,6 +150,7 @@ extension RegisterStatesTableViewController {
 }
 
 extension RegisterStatesTableViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if (searchText == "") {
@@ -162,13 +169,12 @@ extension RegisterStatesTableViewController: UISearchBarDelegate {
                 tableView.hideMessage()
             }
         }
-        
-        self.tableView.reloadData()
+        updateTableView()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         searchBar.text = ""
         searchBar.endEditing(true)
-        self.tableView.reloadData()
+        updateTableView()
     }
 }

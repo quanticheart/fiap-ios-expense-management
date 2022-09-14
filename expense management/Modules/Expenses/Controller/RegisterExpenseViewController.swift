@@ -18,8 +18,6 @@ final class RegisterExpenseViewController: UIViewController {
     @IBOutlet weak var btnSelectImage: UIButton!
     @IBOutlet weak var labelInsertDescription: UILabel!
     @IBOutlet weak var textDescription: UITextView!
-    @IBOutlet weak var btnInsert: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var image: UIImageView!
     
     var expense: Expense?
@@ -38,29 +36,59 @@ final class RegisterExpenseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocalization()
-        setupFields()
-        setFields()
+        setup()
+        setupListeners()
+        setGestureReconizers()
     }
     
-    private func setupFields() {
-        textFieldPrice.keyboardType = .numberPad
-        let tap = UIGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tap)
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    fileprivate func setupListeners() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let _ = UIResponder.currentFirst() as? UITextView {
+            print("###TextView")
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y == 0 {
+                    self.view.frame.origin.y = -keyboardSize.height
+                }
+            }
+        }
+
+    }
+    
+    @objc
+    func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     private func setupLocalization() {
-        dialogImage = DialogImagePicker(presentationController: self, delegate:self)
-        
         navigation.title = "NAVIGATION_INSERT".localize()
         textFieldName.placeholder = "HINT_NAME_EXPENSE".localize()
         textFieldPrice.placeholder = "HINT_PRICE_EXPENSE".localize()
         labelSelectState.text = "HINT_SELECT_STATE".localize()
         btnSelectImage.setTitle("HINT_SELECT_IMAGE".localize(),for: .normal)
         labelInsertDescription?.text = "HINT_LABEL_DESCRIPTION".localize()
-        btnInsert.setTitle("BTN_LABEL_INSERT".localize(),for: .normal)
+        creditCardLabel.text = "HINT_LABEL_CREDIT".localize()
     }
     
-    private func setFields() {
+    private func setGestureReconizers() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    private func setup() {
+        dialogImage = DialogImagePicker(presentationController: self, delegate:self)
+
         if let expense = expense {
             textFieldName.text = expense.name
             textFieldPrice.text = expense.price.toPriceLabel(.dolar)
@@ -69,13 +97,10 @@ final class RegisterExpenseViewController: UIViewController {
             textDescription.text = expense.desc
             image.image = expense.image?.toUIImage()
             navigation.title = "NAVIGATION_UPDATE".localize()
-            btnInsert.setTitle("BTN_LABEL_UPDATE".localize(), for: .normal)
         }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        hideKeyboard()
+        
+        textDescription.layer.cornerRadius = 10.0
+        
     }
     
     @IBAction func insertItem(_ sender: Any) {

@@ -40,9 +40,9 @@ final class ConfigurationViewController: UIViewController {
         tableView.delegate = self
         controller?.delegate = self
         
-        let tap = UIGestureRecognizer(target: self, action: #selector(dismissScreen))
-        tableView.addGestureRecognizer(tap)
-        self.view.addGestureRecognizer(tap)
+//        let tap = UIGestureRecognizer(target: self, action: #selector(dismissScreen))
+//        tableView.addGestureRecognizer(tap)
+//        self.view.addGestureRecognizer(tap)
     }
     
     @objc func dismissScreen() {
@@ -64,10 +64,20 @@ final class ConfigurationViewController: UIViewController {
         dolarQuoteTextField.keyboardType = .numbersAndPunctuation
         
         /*
-        quotePicker.delegate = self
-        quotePicker.dataSource = self
-        dolarQuoteTextField.inputView = quotePicker
+         quotePicker.delegate = self
+         quotePicker.dataSource = self
+         dolarQuoteTextField.inputView = quotePicker
          */
+    }
+    
+    private func showAlertSaveMessage() {
+        let alertTitle = "CONFIG_ALERT_TITLE".localize()
+        let message = "CONFIG_ALERT_MESSAGE".localize()
+        let alert = UIAlertController(title: alertTitle,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
     }
     
     //MARK: - Actions
@@ -82,14 +92,9 @@ final class ConfigurationViewController: UIViewController {
         if let double = (value as? NSString)?.doubleValue {
             setUserDouble(forKey: "currentDoubleDolarExchange", value: double)
         }
-        
-        let alertTitle = "CONFIG_ALERT_TITLE".localize()
-        let message = "CONFIG_ALERT_MESSAGE".localize()
-        let alert = UIAlertController(title: alertTitle,
-                                      message: message,
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.showAlertSaveMessage()
+        }
         
     }
     
@@ -118,7 +123,7 @@ extension ConfigurationViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 extension ConfigurationViewController: UITableViewDelegate {
- 
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -162,5 +167,5 @@ extension ConfigurationViewController: UIPickerViewDelegate, UIPickerViewDataSou
         dolarQuoteTextField.text = controller?.titleForPickerRow(row: row)
         dolarQuoteTextField.resignFirstResponder()
     }
-
+    
 }

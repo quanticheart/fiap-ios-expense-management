@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775F515328D17F8B009F7495 /* UIResponder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F515228D17F8B009F7495 /* UIResponder+Ext.swift */; };
+		775F515428D17FAD009F7495 /* UIResponder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F515228D17F8B009F7495 /* UIResponder+Ext.swift */; };
 		778213BD28C3FA79007DD7A4 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BC28C3FA79007DD7A4 /* SummaryController.swift */; };
 		778213BE28C4058A007DD7A4 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BC28C3FA79007DD7A4 /* SummaryController.swift */; };
 		778213C028C50C64007DD7A4 /* NSObjetc+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */; };
@@ -87,6 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		775F515228D17F8B009F7495 /* UIResponder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Ext.swift"; sourceTree = "<group>"; };
 		778213BC28C3FA79007DD7A4 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjetc+Ext.swift"; sourceTree = "<group>"; };
 		778213C728C561BD007DD7A4 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
@@ -152,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		775F515128D17F63009F7495 /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				775F515228D17F8B009F7495 /* UIResponder+Ext.swift */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
 		778213B728C3A307007DD7A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +242,7 @@
 		C94D3098285E5176005443C8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				775F515128D17F63009F7495 /* UIResponder */,
 				C9F0F8D62863BF37001C2582 /* Constrollers */,
 				C9F0F8CC2863B6AC001C2582 /* System */,
 				C94D309D285E51AC005443C8 /* Vars */,
@@ -553,6 +565,7 @@
 				C9914404285D576300C59ADE /* expense_management.xcdatamodeld in Sources */,
 				C9A7C81B2870B9A50022B06B /* SettingsBundleHelper.swift in Sources */,
 				C94D3097285E4E4D005443C8 /* MainViewController.swift in Sources */,
+				775F515428D17FAD009F7495 /* UIResponder+Ext.swift in Sources */,
 				C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */,
 				C9F0F8C12863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
 				778213C128C50C79007DD7A4 /* NSObjetc+Ext.swift in Sources */,
@@ -587,6 +600,7 @@
 				778213C828C561BD007DD7A4 /* ConfigurationController.swift in Sources */,
 				C9F0F8D42863BF29001C2582 /* UIViewControllerExt.swift in Sources */,
 				C9F0F8C32863A2F0001C2582 /* DetailsExpenseViewController.swift in Sources */,
+				775F515328D17F8B009F7495 /* UIResponder+Ext.swift in Sources */,
 				C9F03719285C4CA90063B355 /* SceneDelegate.swift in Sources */,
 				C9F0F8D82863CCFD001C2582 /* TableViewExt.swift in Sources */,
 				778213C028C50C64007DD7A4 /* NSObjetc+Ext.swift in Sources */,
