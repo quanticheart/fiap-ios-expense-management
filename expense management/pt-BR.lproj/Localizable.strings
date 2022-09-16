@@ -24,7 +24,7 @@
 "HINT_SELECT_STATE" = "Selecione o estado de compra";
 "HINT_SELECT_IMAGE" = "Selecione a imagem do item";
 "HINT_LABEL_DESCRIPTION" = "Descrição da compra";
-"HINT_LABEL_CREDIT" = "Credito?";
+"HINT_LABEL_CREDIT" = "Cartão de Credito?";
 
 "BTN_LABEL_INSERT" = "Inserir item";
 "BTN_LABEL_UPDATE" = "Atualizar item";
