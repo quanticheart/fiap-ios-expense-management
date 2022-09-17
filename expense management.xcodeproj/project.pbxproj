@@ -239,6 +239,54 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		7786D05628D6632800E26BC9 /* ExpenseList */ = {
+			isa = PBXGroup;
+			children = (
+				7786D05728D6634C00E26BC9 /* View */,
+			);
+			path = ExpenseList;
+			sourceTree = "<group>";
+		};
+		7786D05728D6634C00E26BC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7786D05828D6635700E26BC9 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				7786D05928D6636800E26BC9 /* View */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		7786D05928D6636800E26BC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0F8BF2863A2A0001C2582 /* RegisterExpenseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7786D05A28D6637100E26BC9 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7786D05B28D6638600E26BC9 /* View */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7786D05B28D6638600E26BC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9F0F8C22863A2F0001C2582 /* DetailsExpenseViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C94D3098285E5176005443C8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,8 +323,10 @@
 		C99EC1A3285FC0B10071E7A4 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				7786D05A28D6637100E26BC9 /* Details */,
+				7786D05828D6635700E26BC9 /* Registration */,
+				7786D05628D6632800E26BC9 /* ExpenseList */,
 				C99EC1C528613C090071E7A4 /* View */,
-				C99EC1C628613C110071E7A4 /* Controller */,
 				C99EC1C428613BF70071E7A4 /* Model */,
 			);
 			path = Expenses;
@@ -310,20 +360,10 @@
 		C99EC1C528613C090071E7A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9F0F8BE2863A259001C2582 /* Cell */,
 				C99EC1B8286034C90071E7A4 /* Expense.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C99EC1C628613C110071E7A4 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C9F0F8BE2863A259001C2582 /* List */,
-				C99EC1A8285FC6990071E7A4 /* ExpenseViewController.swift */,
-				C9F0F8BF2863A2A0001C2582 /* RegisterExpenseViewController.swift */,
-				C9F0F8C22863A2F0001C2582 /* DetailsExpenseViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		C9A7C8182870B9910022B06B /* System */ = {
@@ -384,13 +424,13 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		C9F0F8BE2863A259001C2582 /* List */ = {
+		C9F0F8BE2863A259001C2582 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				C99EC1C728613C7C0071E7A4 /* ExpenseTableViewCell.swift */,
 				C9F0F8C82863A373001C2582 /* StateTableViewCell.swift */,
 			);
-			path = List;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C9F0F8CB2863B487001C2582 /* AppDelegate */ = {

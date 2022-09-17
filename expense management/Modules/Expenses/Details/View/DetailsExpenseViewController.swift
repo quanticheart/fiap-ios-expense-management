@@ -9,11 +9,11 @@ import UIKit
 
 final class DetailsExpenseViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var labelNmae: UILabel!
-    @IBOutlet weak var labelPrice: UILabel!
-    @IBOutlet weak var labelState: UILabel!
-    @IBOutlet weak var labelDescription: UITextView!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var labelNmae: UILabel!
+    @IBOutlet private weak var labelPrice: UILabel!
+    @IBOutlet private weak var labelState: UILabel!
+    @IBOutlet private weak var labelDescription: UITextView!
     
     var expense: Expense?
     

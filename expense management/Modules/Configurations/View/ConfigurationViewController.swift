@@ -9,15 +9,12 @@ import UIKit
 
 final class ConfigurationViewController: UIViewController {
     
-    @IBOutlet weak var navigation: UINavigationItem!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityAnimator: UIActivityIndicatorView!
+    @IBOutlet private weak var navigation: UINavigationItem!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var activityAnimator: UIActivityIndicatorView!
+    @IBOutlet private weak var dolarQuoteTextField: UITextField!
+    @IBOutlet private weak var taxTextField: UITextField!
     
-    @IBOutlet weak var dolarQuoteTextField: UITextField!
-    @IBOutlet weak var taxTextField: UITextField!
-    
-    private let quotePicker: UIPickerView = UIPickerView()
-    private let taxPicker: UIPickerView = UIPickerView()
     private var controller: ConfigurationController?
     
     override func viewDidLoad() {
@@ -35,14 +32,9 @@ final class ConfigurationViewController: UIViewController {
     
     private func setUp() {
         navigation.title = "TAB2".localize()
-        //msg.text = "MSG_STATES_LIST_EMPTY".localize()
         tableView.dataSource = self
         tableView.delegate = self
         controller?.delegate = self
-        
-//        let tap = UIGestureRecognizer(target: self, action: #selector(dismissScreen))
-//        tableView.addGestureRecognizer(tap)
-//        self.view.addGestureRecognizer(tap)
     }
     
     @objc func dismissScreen() {
@@ -62,12 +54,6 @@ final class ConfigurationViewController: UIViewController {
         bar.sizeToFit()
         dolarQuoteTextField.inputAccessoryView = bar
         dolarQuoteTextField.keyboardType = .numbersAndPunctuation
-        
-        /*
-         quotePicker.delegate = self
-         quotePicker.dataSource = self
-         dolarQuoteTextField.inputView = quotePicker
-         */
     }
     
     private func showAlertSaveMessage() {
@@ -144,28 +130,6 @@ extension ConfigurationViewController: ConfigurationControllerDelegate {
         DispatchQueue.main.async {
             self.activityAnimator.stopAnimating()
         }
-    }
-    
-}
-
-//MARK: - UIPickerViewDelegate & UIPickerViewDataSource
-extension ConfigurationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return controller?.numberOfRowsInComponent() ?? 0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return controller?.titleForPickerRow(row: row)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dolarQuoteTextField.text = controller?.titleForPickerRow(row: row)
-        dolarQuoteTextField.resignFirstResponder()
     }
     
 }

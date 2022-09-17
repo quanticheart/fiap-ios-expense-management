@@ -9,16 +9,16 @@ import UIKit
 
 final class RegisterExpenseViewController: UIViewController {
     
-    @IBOutlet weak var navigation: UINavigationItem!
-    @IBOutlet weak var textFieldName: UITextField!
-    @IBOutlet weak var textFieldPrice: UIPriceTextField!
-    @IBOutlet weak var creditCardLabel: UILabel!
-    @IBOutlet weak var creditCardSwitch: UISwitch!
-    @IBOutlet weak var labelSelectState: UILabel!
-    @IBOutlet weak var btnSelectImage: UIButton!
-    @IBOutlet weak var labelInsertDescription: UILabel!
-    @IBOutlet weak var textDescription: UITextView!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet private weak var navigation: UINavigationItem!
+    @IBOutlet private weak var textFieldName: UITextField!
+    @IBOutlet private weak var textFieldPrice: UIPriceTextField!
+    @IBOutlet private weak var creditCardLabel: UILabel!
+    @IBOutlet private weak var creditCardSwitch: UISwitch!
+    @IBOutlet private weak var labelSelectState: UILabel!
+    @IBOutlet private weak var btnSelectImage: UIButton!
+    @IBOutlet private weak var labelInsertDescription: UILabel!
+    @IBOutlet private weak var textDescription: UITextView!
+    @IBOutlet private weak var image: UIImageView!
     
     var expense: Expense?
     private var selectedState: State? = nil {

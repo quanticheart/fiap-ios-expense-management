@@ -10,7 +10,7 @@ import CoreData
 
 final class ExpenseViewController: UITableViewController {
     
-    @IBOutlet weak var navigation: UINavigationItem!
+    @IBOutlet private weak var navigation: UINavigationItem!
     
     lazy var fetchedResultsController: NSFetchedResultsController<Expense> = {
         return coreDataController(with: Expense.self, sortBy: "name", delegate: self)

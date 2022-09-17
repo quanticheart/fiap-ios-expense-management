@@ -9,8 +9,8 @@ import UIKit
 
 final class ResumeViewController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     
     private var controller: SummaryController?
     
