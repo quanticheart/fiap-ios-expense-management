@@ -54,7 +54,6 @@ final class RegisterExpenseViewController: UIViewController {
     func keyboardWillShow(notification: NSNotification) {
         
         if let _ = UIResponder.currentFirst() as? UITextView {
-            print("###TextView")
             if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                 if self.view.frame.origin.y == 0 {
                     self.view.frame.origin.y = -keyboardSize.height
