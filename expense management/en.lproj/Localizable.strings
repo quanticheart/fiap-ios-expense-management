@@ -51,12 +51,13 @@
 "SUMMARY_TITLE" = "Summary of expenses";
 "CREDIT_CARD_EXPENSES" = "Credit card expenses";
 "OTHER_EXPENSES" = "Expenses paid with other methods";
+"CONFIG_ERROR_MESSAGE" = "The Dolar value was not set yet. Add this info to see the expenses' summary correctly. \nConfig > Dolar value";
 
 //MARK: - CONFIG SCREEN
 "STATES_LIST" = "List of States";
 "SAVE_BUTTON_TITLE" = "Save";
 
-"TODAYS_EXCHANGE" = "Dolar today in (R$):";
+"TODAYS_EXCHANGE" = "Dolar value in (R$):";
 "IOF_TAX" = "Fixed tax IOF(%):";
 
 "CONFIG_ALERT_TITLE" = "Atention";

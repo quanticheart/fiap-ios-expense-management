@@ -15,6 +15,8 @@
 		778213C128C50C79007DD7A4 /* NSObjetc+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */; };
 		778213C828C561BD007DD7A4 /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213C728C561BD007DD7A4 /* ConfigurationController.swift */; };
 		778213C928C56B31007DD7A4 /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778213C728C561BD007DD7A4 /* ConfigurationController.swift */; };
+		7786D05D28D670FD00E26BC9 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7786D05C28D670FD00E26BC9 /* Localization.swift */; };
+		7786D05E28D670FD00E26BC9 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7786D05C28D670FD00E26BC9 /* Localization.swift */; };
 		C91B6F8128614D0D009D3C7B /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8028614D0D009D3C7B /* ImageExt.swift */; };
 		C91B6F82286152E0009D3C7B /* ImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8028614D0D009D3C7B /* ImageExt.swift */; };
 		C91B6F8428618956009D3C7B /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B6F8328618956009D3C7B /* DoubleExt.swift */; };
@@ -93,6 +95,7 @@
 		778213BC28C3FA79007DD7A4 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		778213BF28C50C64007DD7A4 /* NSObjetc+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjetc+Ext.swift"; sourceTree = "<group>"; };
 		778213C728C561BD007DD7A4 /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
+		7786D05C28D670FD00E26BC9 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		C91B6F8028614D0D009D3C7B /* ImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExt.swift; sourceTree = "<group>"; };
 		C91B6F8328618956009D3C7B /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
 		C91B6F852861898D009D3C7B /* AnyExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyExt.swift; sourceTree = "<group>"; };
@@ -327,7 +330,6 @@
 				7786D05828D6635700E26BC9 /* Registration */,
 				7786D05628D6632800E26BC9 /* ExpenseList */,
 				C99EC1C528613C090071E7A4 /* View */,
-				C99EC1C428613BF70071E7A4 /* Model */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -348,13 +350,6 @@
 				778213BA28C3FA19007DD7A4 /* View */,
 			);
 			path = Resume;
-			sourceTree = "<group>";
-		};
-		C99EC1C428613BF70071E7A4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C99EC1C528613C090071E7A4 /* View */ = {
@@ -408,6 +403,7 @@
 				C94D3098285E5176005443C8 /* Extentions */,
 				C9914411285D96E500C59ADE /* Release.xcconfig */,
 				C9914414285D96FE00C59ADE /* Debug.xcconfig */,
+				7786D05C28D670FD00E26BC9 /* Localization.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -610,6 +606,7 @@
 				C9F0F8C12863A2A1001C2582 /* RegisterExpenseViewController.swift in Sources */,
 				778213C128C50C79007DD7A4 /* NSObjetc+Ext.swift in Sources */,
 				C94D30A0285E51CA005443C8 /* StringExt.swift in Sources */,
+				7786D05E28D670FD00E26BC9 /* Localization.swift in Sources */,
 				C9F0F8D92863CCFD001C2582 /* TableViewExt.swift in Sources */,
 				C91B6F8728622A4C009D3C7B /* DoubleExt.swift in Sources */,
 				C94D309B285E519A005443C8 /* TabBarExt.swift in Sources */,
@@ -622,6 +619,7 @@
 			files = (
 				C9F0F8D12863B6DF001C2582 /* SegueExt.swift in Sources */,
 				C9F0F8DF28653625001C2582 /* DialogImageSelector.swift in Sources */,
+				7786D05D28D670FD00E26BC9 /* Localization.swift in Sources */,
 				C9F0F8C92863A373001C2582 /* StateTableViewCell.swift in Sources */,
 				C99EC1C828613C7C0071E7A4 /* ExpenseTableViewCell.swift in Sources */,
 				C99EC1BF286035550071E7A4 /* ResumeViewController.swift in Sources */,

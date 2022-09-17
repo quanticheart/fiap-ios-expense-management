@@ -51,12 +51,13 @@
 "SUMMARY_TITLE" = "Resumo total das despesas";
 "CREDIT_CARD_EXPENSES" = "Despesas com cartão de crédito";
 "OTHER_EXPENSES" = "Despesas com outros métodos";
+"CONFIG_ERROR_MESSAGE" = "O valor do dólar não foi definido ainda. Adicione essa informação para visualizar o resumo de gastos corretamente. \nConfig > Valor Dólar.";
 
 //MARK: - CONFIG SCREEN
 "STATES_LIST" = "Lista de estados";
 "SAVE_BUTTON_TITLE" = "Salvar";
 
-"TODAYS_EXCHANGE" = "Dólar Hoje em (R$):";
+"TODAYS_EXCHANGE" = "Valor Dólar em (R$):";
 "IOF_TAX" = "IOF fixo (%):";
 
 "CONFIG_ALERT_TITLE" = "Atenção";

@@ -23,6 +23,7 @@ final class ResumeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         controller?.loadExpenses()
+        checkDolarExchange()
     }
     
     private func setup() {
@@ -30,6 +31,23 @@ final class ResumeViewController: UIViewController {
         tableView.dataSource = self
         
         titleLabel.text = Localization.SUMMARY_TITLE.getLocalizedString()
+        
+    }
+    
+    private func checkDolarExchange() {
+        
+        if getUserString(forKey: "currentDolarExchange") == nil {
+            let alertTitle = Localization.CONFIG_ALERT_TITLE.getLocalizedString()
+            let message = Localization.CONFIG_ERROR_MESSAGE.getLocalizedString()
+            let alert = UIAlertController(title: alertTitle,
+                                          message: message,
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+                self.tabBarController?.selectedIndex = 1
+            }))
+            
+            present(alert, animated: true)
+        }
         
     }
     
