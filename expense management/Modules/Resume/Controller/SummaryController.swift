@@ -56,9 +56,9 @@ final class SummaryController: NSObject {
     func getTitleForSection(_ section: Int) -> String {
         switch section {
         case 0:
-            return "Despesas com cartão de crédito"
+            return Localization.CREDIT_CARD_EXPENSES.getLocalizedString()
         case 1:
-            return "Despesas com outros métodos"
+            return Localization.OTHER_EXPENSES.getLocalizedString()
         default:
             return ""
         }

@@ -28,6 +28,9 @@ final class ResumeViewController: UIViewController {
     private func setup() {
         controller?.delegate = self
         tableView.dataSource = self
+        
+        titleLabel.text = Localization.SUMMARY_TITLE.getLocalizedString()
+        
     }
     
 }

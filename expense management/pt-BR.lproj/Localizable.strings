@@ -56,5 +56,8 @@
 "STATES_LIST" = "Lista de estados";
 "SAVE_BUTTON_TITLE" = "Salvar";
 
+"TODAYS_EXCHANGE" = "Dólar Hoje em (R$):";
+"IOF_TAX" = "IOF fixo (%):";
+
 "CONFIG_ALERT_TITLE" = "Atenção";
 "CONFIG_ALERT_MESSAGE" = "Cotação atual salva";

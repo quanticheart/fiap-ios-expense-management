@@ -18,7 +18,7 @@ final class ExpenseViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigation.title = "TAB1".localize()
+        navigation.title = Localization.TAB1.getLocalizedString()
         loadExpenses()
     }
     
@@ -46,7 +46,7 @@ extension ExpenseViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = fetchedResultsController.fetchedObjects?.count ?? 0
         if count == 0 {
-            self.tableView.showMenssage("MSG_EXPENSE_LIST_EMPTY".localize())
+            self.tableView.showMenssage(Localization.MSG_EXPENSE_LIST_EMPTY.getLocalizedString())
         } else {
             self.tableView.hideMessage()
             

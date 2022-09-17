@@ -11,9 +11,13 @@ final class ConfigurationViewController: UIViewController {
     
     @IBOutlet private weak var navigation: UINavigationItem!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var todaysExchangeLabel: UILabel!
+    @IBOutlet private weak var taxExchangeLabel: UILabel!
     @IBOutlet private weak var activityAnimator: UIActivityIndicatorView!
     @IBOutlet private weak var dolarQuoteTextField: UITextField!
     @IBOutlet private weak var taxTextField: UITextField!
+    @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var stateListTitle: UILabel!
     
     private var controller: ConfigurationController?
     
@@ -21,7 +25,7 @@ final class ConfigurationViewController: UIViewController {
         super.viewDidLoad()
         controller = ConfigurationController()
         setUp()
-        setupPickersAndTextField()
+        setupTextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +35,12 @@ final class ConfigurationViewController: UIViewController {
     }
     
     private func setUp() {
-        navigation.title = "TAB2".localize()
+        navigation.title = Localization.TAB2.getLocalizedString()
+        todaysExchangeLabel.text = Localization.TODAYS_EXCHANGE.getLocalizedString()
+        taxExchangeLabel.text = Localization.IOF_TAX.getLocalizedString()
+        saveButton.setTitle(Localization.SAVE_BUTTON_TITLE.getLocalizedString(), for: .normal)
+        stateListTitle.text = Localization.STATES_LIST.getLocalizedString()
+        
         tableView.dataSource = self
         tableView.delegate = self
         controller?.delegate = self
@@ -46,7 +55,7 @@ final class ConfigurationViewController: UIViewController {
         dolarQuoteTextField.text = saved
     }
     
-    private func setupPickersAndTextField() {
+    private func setupTextField() {
         let bar = UIToolbar()
         let reset = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(hideKeyboard))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
@@ -57,8 +66,8 @@ final class ConfigurationViewController: UIViewController {
     }
     
     private func showAlertSaveMessage() {
-        let alertTitle = "CONFIG_ALERT_TITLE".localize()
-        let message = "CONFIG_ALERT_MESSAGE".localize()
+        let alertTitle = Localization.CONFIG_ALERT_TITLE.getLocalizedString()
+        let message = Localization.CONFIG_ALERT_MESSAGE.getLocalizedString()
         let alert = UIAlertController(title: alertTitle,
                                       message: message,
                                       preferredStyle: .alert)

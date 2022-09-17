@@ -30,7 +30,7 @@ final class DetailsExpenseViewController: UIViewController {
     
     private func setupView() {
         
-        let complementaryString = "DETAILS_COMPL_TITLE".localize()
+        let complementaryString = Localization.DETAILS_COMPL_TITLE.getLocalizedString()
         
         if let expense = expense {
             labelNmae.text = expense.name

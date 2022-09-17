@@ -52,13 +52,16 @@ final class RegisterStatesTableViewController: UITableViewController {
     }
     
     fileprivate func setupView() {
-        navigation.title = "NAVIGATION_INSERT_STATE".localize()
-        searchBar.placeholder = "SEARCH_STATE_PLACEHOLDER".localize()
+        navigation.title = Localization.NAVIGATION_INSERT_STATE.getLocalizedString()
+        searchBar.placeholder = Localization.SEARCH_STATE_PLACEHOLDER.getLocalizedString()
         searchBar.delegate = self
     }
     
     private func showAlert(for state: State? = nil) {
-        showDialog(labelOK: state == nil ? "NAVIGATION_INSERT".localize() : "BTN_LABEL_UPDATE".localize(), labelCancel: "BTN_LABEL_CANCEL".localize(), placeholder: "SEARCH_STATE_PLACEHOLDER".localize(), text: state?.name, callback: { text in
+        showDialog(labelOK: state == nil ? Localization.NAVIGATION_INSERT.getLocalizedString() : Localization.BTN_LABEL_UPDATE.getLocalizedString(),
+                   labelCancel: Localization.BTN_LABEL_CANCEL.getLocalizedString(),
+                   placeholder: Localization.SEARCH_STATE_PLACEHOLDER.getLocalizedString(),
+                   text: state?.name, callback: { text in
             let state = self.selectedState ?? State(context: self.context)
             state.name = text
             try? self.context.save()
@@ -85,7 +88,7 @@ extension RegisterStatesTableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if statesFiltered.count == 0 {
-            self.tableView.showMenssage("MSG_STATES_LIST_EMPTY".localize())
+            self.tableView.showMenssage(Localization.MSG_STATES_LIST_EMPTY.getLocalizedString())
             searchBar.isHidden = true
             return 0
         } else {
@@ -128,7 +131,7 @@ extension RegisterStatesTableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "BTN_LABEL_EXCLUDE".localize()) { action, view, completionHandler in
+        let deleteAction = UIContextualAction(style: .destructive, title: Localization.BTN_LABEL_EXCLUDE.getLocalizedString()) { action, view, completionHandler in
             let state = self.statesFiltered[indexPath.row]
             
             self.context.delete(state)
@@ -158,13 +161,13 @@ extension RegisterStatesTableViewController: UISearchBarDelegate {
             tableView.hideMessage()
         } else{
             statesFiltered = []
-            // you can do any kind of filtering here based on user input
+            
             statesFiltered = states.filter{
                 $0.name!.lowercased().contains(searchText.lowercased())
             }
             
             if statesFiltered.count == 0 {
-                tableView.showMenssage("MSG_STATES_SEARCH_EMPTY".localize())
+                tableView.showMenssage(Localization.MSG_STATES_SEARCH_EMPTY.getLocalizedString())
             } else {
                 tableView.hideMessage()
             }

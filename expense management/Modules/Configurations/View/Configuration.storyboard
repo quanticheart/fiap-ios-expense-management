@@ -173,8 +173,12 @@
                         <outlet property="activityAnimator" destination="PTS-pw-HLc" id="JG5-1e-n17"/>
                         <outlet property="dolarQuoteTextField" destination="Mct-1U-11H" id="v8q-m0-BZ7"/>
                         <outlet property="navigation" destination="Zcd-Of-1Ld" id="Y17-4a-gxU"/>
+                        <outlet property="saveButton" destination="z2w-uF-e9S" id="8Yf-CU-4FO"/>
+                        <outlet property="stateListTitle" destination="g1q-Mb-sy4" id="sVn-Q5-R4Q"/>
                         <outlet property="tableView" destination="3Bd-Lo-TuT" id="sMb-Q7-zcr"/>
+                        <outlet property="taxExchangeLabel" destination="RPh-eR-wZO" id="tkF-A5-Zfh"/>
                         <outlet property="taxTextField" destination="Mvt-jS-aDj" id="UOp-l7-GZj"/>
+                        <outlet property="todaysExchangeLabel" destination="1eP-o8-fgk" id="Uxc-QH-GpX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdG-v9-rGY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

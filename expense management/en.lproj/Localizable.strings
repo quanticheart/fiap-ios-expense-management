@@ -56,5 +56,8 @@
 "STATES_LIST" = "List of States";
 "SAVE_BUTTON_TITLE" = "Save";
 
+"TODAYS_EXCHANGE" = "Dolar today in (R$):";
+"IOF_TAX" = "Fixed tax IOF(%):";
+
 "CONFIG_ALERT_TITLE" = "Atention";
 "CONFIG_ALERT_MESSAGE" = "Current quote saved";

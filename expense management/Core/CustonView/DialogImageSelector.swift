@@ -20,7 +20,7 @@ open class DialogImagePicker: NSObject {
     public init(presentationController: UIViewController, delegate: ImagePickerDelegate) {
         self.imagePickerController = UIImagePickerController()
         super.init()
-
+        
         self.presentationController = presentationController
         self.delegate = delegate
         
@@ -31,21 +31,23 @@ open class DialogImagePicker: NSObject {
     
     public func present() {
         
-        let alertController = UIAlertController(title: "DIALOG_IMG_MSG_TITLE".localize(), message: "DIALOG_IMG_MSG_SUBTITLE".localize(), preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: Localization.DIALOG_IMG_MSG_TITLE.getLocalizedString(),
+                                                message: Localization.DIALOG_IMG_MSG_SUBTITLE.getLocalizedString(),
+                                                preferredStyle: .actionSheet)
         
-        if let action = self.action(for: .camera, title: "DIALOG_IMG_OPTION_CAMERA".localize()) {
-            alertController.addAction(action)
-        }
-       
-        if let action = self.action(for: .photoLibrary, title: "DIALOG_IMG_OPTION_LIBRARY".localize()) {
-            alertController.addAction(action)
-        }
-        
-        if let action = self.action(for: .savedPhotosAlbum, title: "DIALOG_IMG_OPTION_ALBUM".localize()) {
+        if let action = self.action(for: .camera, title: Localization.DIALOG_IMG_OPTION_CAMERA.getLocalizedString()) {
             alertController.addAction(action)
         }
         
-        alertController.addAction(UIAlertAction(title: "BTN_LABEL_CANCEL".localize(), style: .cancel, handler: nil))
+        if let action = self.action(for: .photoLibrary, title: Localization.DIALOG_IMG_OPTION_LIBRARY.getLocalizedString()) {
+            alertController.addAction(action)
+        }
+        
+        if let action = self.action(for: .savedPhotosAlbum, title: Localization.DIALOG_IMG_OPTION_ALBUM.getLocalizedString()) {
+            alertController.addAction(action)
+        }
+        
+        alertController.addAction(UIAlertAction(title: Localization.BTN_LABEL_CANCEL.getLocalizedString(), style: .cancel, handler: nil))
         
         self.presentationController?.present(alertController, animated: true, completion: nil)
     }

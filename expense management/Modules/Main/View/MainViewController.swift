@@ -12,9 +12,9 @@ class MainViewController: UITabBarController {
     @IBOutlet weak var mainTabBar: UITabBar!
     
     override func viewDidAppear(_ animated: Bool) {
-        mainTabBar.set(title: "TAB1".localize(), at: 0)
-        mainTabBar.set(title: "TAB2".localize(), at: 1)
-        mainTabBar.set(title: "TAB3".localize(), at: 2)
+        mainTabBar.set(title: Localization.TAB1.getLocalizedString(), at: 0)
+        mainTabBar.set(title: Localization.TAB2.getLocalizedString(), at: 1)
+        mainTabBar.set(title: Localization.TAB3.getLocalizedString(), at: 2)
     }
     
     override func viewDidLoad() {

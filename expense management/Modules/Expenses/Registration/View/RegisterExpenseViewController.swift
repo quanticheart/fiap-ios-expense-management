@@ -24,7 +24,7 @@ final class RegisterExpenseViewController: UIViewController {
     private var selectedState: State? = nil {
         didSet {
             if selectedState == nil {
-                labelSelectState.text = "HINT_SELECT_STATE".localize()
+                labelSelectState.text = Localization.HINT_SELECT_STATE.getLocalizedString()
             } else {
                 labelSelectState.text = selectedState?.name
             }
@@ -71,13 +71,13 @@ final class RegisterExpenseViewController: UIViewController {
     }
     
     private func setupLocalization() {
-        navigation.title = "NAVIGATION_INSERT".localize()
-        textFieldName.placeholder = "HINT_NAME_EXPENSE".localize()
-        textFieldPrice.placeholder = "HINT_PRICE_EXPENSE".localize()
-        labelSelectState.text = "HINT_SELECT_STATE".localize()
-        btnSelectImage.setTitle("HINT_SELECT_IMAGE".localize(),for: .normal)
-        labelInsertDescription?.text = "HINT_LABEL_DESCRIPTION".localize()
-        creditCardLabel.text = "HINT_LABEL_CREDIT".localize()
+        navigation.title = Localization.NAVIGATION_INSERT.getLocalizedString()
+        textFieldName.placeholder = Localization.HINT_NAME_EXPENSE.getLocalizedString()
+        textFieldPrice.placeholder = Localization.HINT_PRICE_EXPENSE.getLocalizedString()
+        labelSelectState.text = Localization.HINT_SELECT_STATE.getLocalizedString()
+        btnSelectImage.setTitle(Localization.HINT_SELECT_IMAGE.getLocalizedString(),for: .normal)
+        labelInsertDescription?.text = Localization.HINT_LABEL_DESCRIPTION.getLocalizedString()
+        creditCardLabel.text = Localization.HINT_LABEL_CREDIT.getLocalizedString()
     }
     
     private func setGestureReconizers() {
@@ -95,7 +95,7 @@ final class RegisterExpenseViewController: UIViewController {
             labelSelectState.text = expense.state?.name
             textDescription.text = expense.desc
             image.image = expense.image?.toUIImage()
-            navigation.title = "NAVIGATION_UPDATE".localize()
+            navigation.title = Localization.NAVIGATION_UPDATE.getLocalizedString()
         }
         
         textDescription.layer.cornerRadius = 10.0
@@ -112,8 +112,8 @@ final class RegisterExpenseViewController: UIViewController {
               !state.isEmpty
         else {
             
-            let title = "SUMMARY_ALERT_TITLE".localize()
-            let message = "SUMMARY_ALERT_MESSAGE".localize()
+            let title = Localization.SUMMARY_ALERT_TITLE.getLocalizedString()
+            let message = Localization.SUMMARY_ALERT_MESSAGE.getLocalizedString()
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             present(alert, animated: true)
